@@ -1,0 +1,10 @@
+INSERT INTO tb_genre (name) VALUES ('AÇÃO');
+INSERT INTO tb_genre (name) VALUES ('AVENTURA');
+INSERT INTO tb_genre (name) VALUES ('COMEDIA');
+INSERT INTO tb_genre (name) VALUES ('ROMANCE');
+INSERT INTO tb_genre (name) VALUES ('DOCUMENTARIO');
+INSERT INTO tb_genre (name) VALUES ('TERROR');
+INSERT INTO tb_genre (name) VALUES ('SUSPENSE');
+INSERT INTO tb_genre (name) VALUES ('COMEDIA ROMANTICA');
+INSERT INTO tb_genre (name) VALUES ('PARA FAMILA');
+INSERT INTO tb_genre (name) VALUES ('ANIMES');
