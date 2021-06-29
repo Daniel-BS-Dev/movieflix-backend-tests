@@ -45,5 +45,16 @@ INSERT INTO tb_movie (title, sub_Title, year, img_Uri, synopsis, genre_id) VALUE
 INSERT INTO tb_movie (title, sub_Title, year, img_Uri, synopsis, genre_id) VALUES ('Os Originais','',2013,'https://www.themoviedb.org/t/p/original/dEI9IZEPcHXDiB4Yf3nYgXJtEOD.jpg','Klaus é um vampiro disposto a retomar Nova Orleans, cidade construída por sua família séculos atrás. Na missão, ele aprende mais sobre seu passado enquanto alianças são formadas.',7);
 INSERT INTO tb_movie (title, sub_Title, year, img_Uri, synopsis, genre_id) VALUES ('Shadowhunters: Instrumentos Mortais','All the Legends Are True',2016,'https://www.themoviedb.org/t/p/original/p2kSeQt2qFMrGWg7Mj1woIZfTYP.jpg','A vida da jovem Clary Fray muda completamente quando ela descobre fazer parte de uma raça de humanos que caçam demônios e têm sangue de anjo.',7);
 
+
 INSERT INTO tb_role( authority ) VALUES ('ROLE_VISITOR');
 INSERT INTO tb_role( authority ) VALUES ('ROLE_MEMBER');
+
+
+INSERT INTO tb_user (name, email, password) VALUES ('Alex Brown', 'alex@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
+INSERT INTO tb_user (name, email, password) VALUES ('Maria Green', 'maria@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
+
+
+INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
+
