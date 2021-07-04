@@ -2,30 +2,36 @@ package com.devsuperior.movieflix.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import com.devsuperior.movieflix.entities.Genre;
+import com.devsuperior.movieflix.entities.Movie;
 
-
-public class GenreDTO implements Serializable{
+public class GenreMovieDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
 	
-	public GenreDTO() {
+	List<MovieDTO> movies = new ArrayList<>();
+	
+	public GenreMovieDTO() {
 		
 	}
-	public GenreDTO(Long id, String name) {
+	public GenreMovieDTO(Long id, String name) {
 		this.id = id;
 		this.name = name;
 		
 	}
-	public GenreDTO(Genre entity) {
-	    id = entity.getId();
+	public GenreMovieDTO(Genre entity) {
+		id = entity.getId();
 		name = entity.getName();
+		
+	}
+	public GenreMovieDTO(Genre entity, Set<Movie> list) {
+		this(entity);
+		list.forEach(x -> this.movies.add(new MovieDTO(x)));;
 		
 	}
 	public Long getId() {
@@ -44,7 +50,9 @@ public class GenreDTO implements Serializable{
 		this.name = name;
 		
 	}
-
-	
+	public List<MovieDTO> getMovies() {
+		return movies;
+		
+	}	
 
 }

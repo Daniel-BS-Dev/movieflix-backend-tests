@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.GenreDTO;
+import com.devsuperior.movieflix.dto.GenreMovieDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.repositories.GenreRepository;
 import com.devsuperior.movieflix.services.exception.ResourceNotFoundException;
@@ -26,5 +27,12 @@ public class GenreService {
 		return list.stream().map(x -> new GenreDTO(x)).collect(Collectors.toList());
 		
 	
+	}
+	@Transactional(readOnly = true)
+	public GenreMovieDTO findById(Long id) {
+		Optional<Genre> obj = repository.findById(id);
+		Genre entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
+		return new GenreMovieDTO(entity, entity.getMovies());
+		
 	}
 }
