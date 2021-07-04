@@ -23,14 +23,8 @@ public class GenreService {
 	@Transactional(readOnly = true)
 	public List<GenreDTO> findAll(){
 		List<Genre> list = repository.findAll();
-		return list.stream().map(x -> new GenreDTO(x, x.getMovies())).collect(Collectors.toList());
+		return list.stream().map(x -> new GenreDTO(x)).collect(Collectors.toList());
 		
-	}
-	@Transactional(readOnly = true)
-	public GenreDTO findById(Long id) {
-		Optional<Genre> obj = repository.findById(id);
-		Genre entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
-		return new GenreDTO(entity, entity.getMovies());
-
+	
 	}
 }

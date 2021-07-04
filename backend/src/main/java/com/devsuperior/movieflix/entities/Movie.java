@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+
 @Entity
 @Table(name = "tb_movie")
 public class Movie implements Serializable{
@@ -36,10 +38,10 @@ public class Movie implements Serializable{
 	
 	@OneToMany(mappedBy = "movie")
 	private List<Review> reviews = new ArrayList<>();
+	
 	public Movie() {
 		
 	}
-
 	public Movie(Long id, String title, String subTitle, Integer year, String imgUri, String synopsis, Genre genre) {
 		this.id = id;
 		this.title = title;
@@ -110,7 +112,6 @@ public class Movie implements Serializable{
 		return reviews;
 		
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
