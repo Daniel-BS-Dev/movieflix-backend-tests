@@ -8,7 +8,6 @@ import java.util.Set;
 
 import com.devsuperior.movieflix.entities.Genre;
 
-
 public class GenreDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
