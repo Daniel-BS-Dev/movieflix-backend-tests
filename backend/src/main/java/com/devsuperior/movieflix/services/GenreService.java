@@ -10,9 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.GenreDTO;
 import com.devsuperior.movieflix.dto.GenreMovieDTO;
+import com.devsuperior.movieflix.dto.MovieReviewDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.repositories.GenreRepository;
-import com.devsuperior.movieflix.services.exception.ResourceNotFoundException;
+import com.devsuperior.movieflix.services.exception.EntityNotFoundException;
 
 
 @Service
@@ -31,8 +32,8 @@ public class GenreService {
 	@Transactional(readOnly = true)
 	public GenreMovieDTO findById(Long id) {
 		Optional<Genre> obj = repository.findById(id);
-		Genre entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
+		Genre entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not found"));
 		return new GenreMovieDTO(entity, entity.getMovies());
-		
 	}
+
 }

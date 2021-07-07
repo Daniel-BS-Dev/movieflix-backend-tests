@@ -4,20 +4,33 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.ReviewDTO;
+import com.devsuperior.movieflix.dto.ReviewOptionDTO;
 import com.devsuperior.movieflix.entities.Review;
+import com.devsuperior.movieflix.entities.User;
+import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.devsuperior.movieflix.repositories.ReviewRepository;
-import com.devsuperior.movieflix.services.exception.ResourceNotFoundException;
+import com.devsuperior.movieflix.repositories.UserRepository;
+import com.devsuperior.movieflix.services.exception.EntityNotFoundException;
 
 @Service
 public class ReviewService {
 
 	@Autowired
 	private ReviewRepository repository;
+	
+	@Autowired
+	private MovieRepository movieRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 	
 	@Transactional(readOnly = true)
 	public List<ReviewDTO> findAll(){
@@ -29,8 +42,28 @@ public class ReviewService {
 	@Transactional(readOnly = true)
 	public ReviewDTO findById(Long id) {
 		Optional<Review> obj = repository.findById(id);
-		Review entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
+		Review entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not found"));
 		return new ReviewDTO(entity);
+		
+	}
+	@Transactional
+	public ReviewOptionDTO insert(@Valid ReviewOptionDTO dto) {
+		Review entity = new Review();
+		copyDtoToEntity(dto, entity);
+		entity = repository.save(entity);
+		return new ReviewOptionDTO(entity);
+		
+	}
+	private void copyDtoToEntity(ReviewOptionDTO dto, Review entity) {
+		
+		entity.setText(dto.getText());
+		
+	    User user = userRepository.getOne(dto.getUserId());
+	    entity.setUser(user);
+	    
+		//Movie movie = movieRepository.getOne(dto.getId());
+		//entity.setMovie(movie);
+		
 		
 	}
 }

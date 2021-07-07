@@ -2,25 +2,26 @@ package com.devsuperior.movieflix.dto;
 
 import java.io.Serializable;
 
-import com.devsuperior.movieflix.entities.Genre;
+import com.devsuperior.movieflix.entities.User;
 
-public class GenreDTO implements Serializable{
+public class UserDTO  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
 	
-	public GenreDTO() {
+	
+	public UserDTO() {
 		
 	}
-	public GenreDTO(Long id, String name) {
+	public UserDTO(Long id, String name) {
 		this.id = id;
 		this.name = name;
 		
 	}
-	public GenreDTO(Genre entity) {
-	    id = entity.getId();
-		name = entity.getName();
+	public UserDTO(User entity) {
+		this.id = entity.getId();
+		this.name = entity.getName();
 		
 	}
 	public Long getId() {
@@ -39,7 +40,5 @@ public class GenreDTO implements Serializable{
 		this.name = name;
 		
 	}
-
-	
-
+  
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.devsuperior.movieflix.dto.GenreMovieDTO;
 import com.devsuperior.movieflix.dto.MovieDTO;
 import com.devsuperior.movieflix.dto.MovieReviewDTO;
 import com.devsuperior.movieflix.services.MovieService;
@@ -43,5 +44,6 @@ public class MovieResource {
 		return ResponseEntity.ok().body(dto);
 		
 	}
+	
 	
 }

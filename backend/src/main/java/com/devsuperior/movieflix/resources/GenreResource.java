@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.movieflix.dto.GenreDTO;
 import com.devsuperior.movieflix.dto.GenreMovieDTO;
+import com.devsuperior.movieflix.dto.MovieReviewDTO;
 import com.devsuperior.movieflix.services.GenreService;
 
 @RestController
@@ -33,5 +34,5 @@ public class GenreResource {
 		
 	}
 	
-
+	
 }

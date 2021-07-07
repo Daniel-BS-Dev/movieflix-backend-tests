@@ -58,5 +58,6 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 
 INSERT INTO tb_review (text, movie_id, user_id) VALUES ('esse filme é muito legal', 1,1);
-INSERT INTO tb_review (text, movie_id, user_id) VALUES ('nao gostei disso', 4,2);
-
+INSERT INTO tb_review (text, movie_id, user_id) VALUES ('nao gostei', 4,2);
+INSERT INTO tb_review (text, movie_id, user_id) VALUES ('sensacional', 10,1);
+INSERT INTO tb_review (text, movie_id, user_id) VALUES ('não tem muita ação', 20,2);
