@@ -3,8 +3,6 @@ package com.devsuperior.movieflix.resources;
 import java.net.URI;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.devsuperior.movieflix.dto.ReviewDTO;
-import com.devsuperior.movieflix.dto.ReviewOptionDTO;
+import com.devsuperior.movieflix.dto.ReviewInsertDTO;
+import com.devsuperior.movieflix.entities.Movie;
+import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.services.ReviewService;
 
 @RestController
@@ -32,9 +32,9 @@ public class ReviewResource {
 		 
 	}
 	@PostMapping
-	public ResponseEntity<ReviewOptionDTO> insert(@Valid @RequestBody ReviewOptionDTO dto){
+	public ResponseEntity<ReviewInsertDTO> insert(@RequestBody ReviewInsertDTO dto){
 		dto = service.insert(dto);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/[id]").
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").
 				  buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(dto);
 		

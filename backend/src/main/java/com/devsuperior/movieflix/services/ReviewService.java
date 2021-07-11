@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.ReviewDTO;
-import com.devsuperior.movieflix.dto.ReviewOptionDTO;
+import com.devsuperior.movieflix.dto.ReviewInsertDTO;
 import com.devsuperior.movieflix.entities.Review;
 import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.MovieRepository;
@@ -47,21 +47,22 @@ public class ReviewService {
 		
 	}
 	@Transactional
-	public ReviewOptionDTO insert(@Valid ReviewOptionDTO dto) {
+	public ReviewInsertDTO insert(@Valid ReviewInsertDTO dto) {
 		Review entity = new Review();
 		copyDtoToEntity(dto, entity);
 		entity = repository.save(entity);
-		return new ReviewOptionDTO(entity);
+		return new ReviewInsertDTO(entity);
 		
 	}
-	private void copyDtoToEntity(ReviewOptionDTO dto, Review entity) {
+	private void copyDtoToEntity(ReviewInsertDTO dto, Review entity) {
 		
 		entity.setText(dto.getText());
-		
-	    User user = userRepository.getOne(dto.getUserId());
-	    entity.setUser(user);
 	    
-		//Movie movie = movieRepository.getOne(dto.getId());
+		User user = userRepository.getOne(dto.getUser());
+		entity.setUser(user);
+
+	    
+		//Movie movie = movieRepository.getOne(dto.getMovie());
 		//entity.setMovie(movie);
 		
 		
