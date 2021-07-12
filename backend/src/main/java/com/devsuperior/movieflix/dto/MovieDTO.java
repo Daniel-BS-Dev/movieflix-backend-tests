@@ -13,7 +13,9 @@ public class MovieDTO implements Serializable {
 	private Integer year;
 	private String imgUri;
 	
-	
+	public MovieDTO() {
+		
+	}
 	public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUri) {
 		this.id = id;
 		this.title = title;

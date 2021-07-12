@@ -10,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.devsuperior.movieflix.dto.MovieDTO;
 import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.dto.ReviewInsertDTO;
+import com.devsuperior.movieflix.dto.UserDTO;
+import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.entities.Review;
 import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.MovieRepository;
@@ -26,11 +29,10 @@ public class ReviewService {
 	private ReviewRepository repository;
 	
 	@Autowired
-	private MovieRepository movieRepository;
-	
-	@Autowired
 	private UserRepository userRepository;
 	
+	@Autowired
+	private MovieRepository movieRepository;
 	
 	@Transactional(readOnly = true)
 	public List<ReviewDTO> findAll(){
@@ -56,15 +58,19 @@ public class ReviewService {
 	}
 	private void copyDtoToEntity(ReviewInsertDTO dto, Review entity) {
 		
-		entity.setText(dto.getText());
-	    
-		User user = userRepository.getOne(dto.getUser());
-		entity.setUser(user);
-
-	    
-		//Movie movie = movieRepository.getOne(dto.getMovie());
-		//entity.setMovie(movie);
 		
+	   entity.setText(dto.getText());
+	   
+	   UserDTO userDto = new UserDTO();
+	   userDto.setId(dto.getUserId());
+	   User user = userRepository.getOne(userDto.getId());
+	   entity.setUser(user);
+	   
+	   MovieDTO movieDto = new MovieDTO();
+	   movieDto.setId(dto.getMovieId());
+	   Movie movie = movieRepository.getOne(movieDto.getId());
+	   entity.setMovie(movie);
+	 
 		
 	}
 }

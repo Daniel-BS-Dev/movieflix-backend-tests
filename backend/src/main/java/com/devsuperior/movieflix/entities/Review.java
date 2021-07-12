@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.devsuperior.movieflix.dto.ReviewInsertDTO;
+
 
 @Entity
 @Table(name = "tb_review")

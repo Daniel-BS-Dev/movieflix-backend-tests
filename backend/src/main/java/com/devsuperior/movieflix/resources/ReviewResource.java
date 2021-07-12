@@ -14,8 +14,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.dto.ReviewInsertDTO;
-import com.devsuperior.movieflix.entities.Movie;
-import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.services.ReviewService;
 
 @RestController
