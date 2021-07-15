@@ -12,6 +12,7 @@ public class UserDTO  implements Serializable{
 
 	private Long id;
 	private String name;
+	private String email;
 	
 	private List<ReviewDTO> reviews = new ArrayList<>();
 
@@ -26,6 +27,7 @@ public class UserDTO  implements Serializable{
 	public UserDTO(User entity) {
 		id = entity.getId();
 		name = entity.getName();
+		email = entity.getEmail();
 		
 	}
 	public UserDTO(User entity, List<Review> list) {
@@ -47,6 +49,14 @@ public class UserDTO  implements Serializable{
 	}
 	public void setName(String name) {
 		this.name = name;
+		
+	}
+	public String getEmail() {
+		return email;
+		
+	}
+	public void setEmail(String email) {
+		this.email = email;
 		
 	}
 	public List<ReviewDTO> getReviews() {

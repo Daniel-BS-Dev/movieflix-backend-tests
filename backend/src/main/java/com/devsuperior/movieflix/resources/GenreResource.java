@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.movieflix.dto.GenreDTO;
-import com.devsuperior.movieflix.dto.GenreMovieDTO;
-import com.devsuperior.movieflix.dto.MovieReviewDTO;
 import com.devsuperior.movieflix.services.GenreService;
 
 @RestController
@@ -28,8 +26,8 @@ public class GenreResource {
 		 
 	}
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<GenreMovieDTO> findById(@PathVariable Long id){
-		GenreMovieDTO dto = service.findById(id);
+	public ResponseEntity<GenreDTO> findById(@PathVariable Long id){
+		GenreDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 		
 	}

@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.movieflix.dto.GenreMovieDTO;
+
 import com.devsuperior.movieflix.dto.MovieDTO;
-import com.devsuperior.movieflix.dto.MovieReviewDTO;
 import com.devsuperior.movieflix.services.MovieService;
 
 @RestController
@@ -26,6 +25,8 @@ public class MovieResource {
 	
 	@GetMapping
 	public ResponseEntity<Page<MovieDTO>> findAll(
+			@RequestParam(value = "genreId", defaultValue = "0") Long genreId,
+			@RequestParam(value = "title", defaultValue = "") String title,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "linesPerPage", defaultValue = "10") Integer linesPerPage,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
@@ -34,13 +35,13 @@ public class MovieResource {
 	
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage,Direction.valueOf(direction),orderBy);
 		
-		Page<MovieDTO> list = service.findAllPaged(pageRequest);
+		Page<MovieDTO> list = service.findAllPaged(genreId, title.trim(), pageRequest);
 	    return ResponseEntity.ok().body(list);
 
 	}
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<MovieReviewDTO> findById(@PathVariable Long id){
-		MovieReviewDTO dto = service.findById(id);
+	public ResponseEntity<MovieDTO> findById(@PathVariable Long id){
+		MovieDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 		
 	}

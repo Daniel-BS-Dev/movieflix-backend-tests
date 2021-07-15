@@ -9,8 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.MovieDTO;
-import com.devsuperior.movieflix.dto.MovieReviewDTO;
+import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
+import com.devsuperior.movieflix.repositories.GenreRepository;
 import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.devsuperior.movieflix.services.exception.EntityNotFoundException;
 
@@ -19,23 +20,25 @@ public class MovieService {
 	
 	@Autowired
 	private MovieRepository repository;
+	
+	@Autowired
+	private GenreRepository genreRepository;
 
 	
 	@Transactional(readOnly = true)
-	public Page<MovieDTO> findAllPaged(PageRequest pageRequest) {
-		Page<Movie> page = repository.findAll(pageRequest);
+	public Page<MovieDTO> findAllPaged(Long genreId, String title, PageRequest pageRequest) {
+		Genre genre = (genreId == 0) ? null : genreRepository.getOne(genreId);
+		Page<Movie> page = repository.find(genre, title, pageRequest);
 		return page.map(x -> new MovieDTO(x));
 		
 	}
 	@Transactional(readOnly = true)
-	public MovieReviewDTO findById(Long id) {
+	public MovieDTO findById(Long id) {
 		Optional<Movie> obj = repository.findById(id);
 		Movie entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not found"));
-		return new MovieReviewDTO(entity, entity.getReviews());
+		return new MovieDTO(entity, entity.getReviews());
 		
 	}
-	
-	
 	
 
 }
