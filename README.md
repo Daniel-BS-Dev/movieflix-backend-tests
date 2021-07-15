@@ -38,15 +38,15 @@ Pré-requisitos : Java 8
 * Testes manuais no Postman, você deverá ter as requisições Postman abaixo:
     
  ```java
-   # Busca lista de genre
+   # Buscar lista de gênero
      GET 
          /genres
     
-   # Busca páginada por movie 
+   # Busca páginada de filmes
      GET 
         /movies?page=0&linesPerPage=12&direction=ASC&orderby=title
         
-   # Busca páginada por genre
+   # Busca páginada de filmes por gênero
      GET 
          /movies?genre=1
          
@@ -54,7 +54,7 @@ Pré-requisitos : Java 8
      GET 
          /movies/1
          
-   # Inserção de novo Review
+   # Inserção de um novo comentário
      POST 
          /reviews
        {
