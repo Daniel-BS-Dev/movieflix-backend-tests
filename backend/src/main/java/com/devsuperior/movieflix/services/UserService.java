@@ -1,6 +1,5 @@
 package com.devsuperior.movieflix.services;
 
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,13 +12,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.movieflix.dto.GenreDTO;
 import com.devsuperior.movieflix.dto.UserDTO;
-import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.UserRepository;
-
-
 
 @Service
 public class UserService implements UserDetailsService {
