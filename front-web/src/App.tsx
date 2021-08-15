@@ -1,10 +1,10 @@
-import './app.scss';
+
 import './core/assets/styles/custom.scss';
-import HeaderBar from './core/components/Header';
+import Routes from './Routes';
 
 const App = () =>{
     return (
-        <HeaderBar />
+        <Routes />
     );
 }
 

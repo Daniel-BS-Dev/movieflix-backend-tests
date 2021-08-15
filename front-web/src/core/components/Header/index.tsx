@@ -1,11 +1,14 @@
 import './styles.scss';
+import { Link } from 'react-router-dom';
 
 const HeaderBar = () => {
   return (
   <header className="main-header btn btn-warning">
-    <a href = "/movies" className="route-hearder">
-       <h4 className="title-header">MovieFlix</h4>
-    </a>
+        <Link to="/movie" className="title-header">
+           <h4>MovieFlix</h4>
+        </Link>
+           
+        
   </header>
      );
   }
