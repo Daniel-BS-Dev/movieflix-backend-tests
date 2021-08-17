@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import HeaderBar from './core/components/Header';
-import Login from './pages/Login';
+import Home from './pages/Home';
 import Movie from './pages/Movies';
 
 const Routes = () =>(
@@ -9,13 +9,13 @@ const Routes = () =>(
         <HeaderBar />
     <Switch>
       <Route path="/" exact>
-          <Login />
+          <Home/>
       </Route>
       <Route path="/movie">
           <Movie />
       </Route>
       <Route path="/movies/id">
-          <Login />
+          <Home />
       </Route>
     </Switch>
   </BrowserRouter>

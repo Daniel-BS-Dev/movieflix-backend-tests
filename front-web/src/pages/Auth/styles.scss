@@ -1,0 +1,36 @@
+.auth-container{
+    padding: 70px 50px 130px 50px;
+    background: #6C6C6C;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    display: block;
+    justify-content: center;
+    //align-items: center;
+
+    .auth-login{
+        margin-bottom: 35px;
+        font-size: 48px;
+        line-height: 65px;
+        text-align: center;
+        letter-spacing: -0.015em;
+        color: #FFFFFF;
+        
+    }
+}
+
+.auth-form{
+    background: #FEFEFE;
+    border: 1px solid #FEFEFE;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 390px;
+    margin-bottom: 30px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #263238;
+
+    &::placeholder{
+        color: #9e9e9e;
+        
+    }
+}
