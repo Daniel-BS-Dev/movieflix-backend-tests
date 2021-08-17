@@ -1,8 +1,11 @@
+import Form from '../../core/components/Form';
 import './styles.scss';
 
 const Movie = () => {
     return(
-       <h1>movies</h1>
+       <div className="movie-container">
+           <Form />
+       </div>
     );
 }
 

@@ -1,0 +1,45 @@
+.form-container{
+    background: #6C6C6C;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.form-content{
+    padding: 15px 0px 15px 20px;
+}
+
+.genres-select__menu{
+    color: #ffffff !important;
+    background-color: #6C6C6C !important;
+    margin-bottom: 50px !important;
+}
+.genres-select__control {
+    width: 250px;
+    border: 2px solid #fff !important;
+
+}
+
+.genres-select__selectoption {
+    border: 2px solid #fff !important;
+
+}
+
+.genres-select__single-value{
+    color: #ffffff !important;
+
+}
+
+.genres-select__value-container {
+    background-color: #6C6C6C;
+}
+
+.genres-select__indicator {
+    display: none !important;
+}
+
+.genres-select__placeholder{
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #ffffff !important;
+}
