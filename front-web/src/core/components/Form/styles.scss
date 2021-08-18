@@ -10,18 +10,20 @@
 
 .genres-select__menu{
     color: #ffffff !important;
-    background-color: #6C6C6C !important;
-    margin-bottom: 50px !important;
+    background-color: #6c6c6c !important;
+    
+    
 }
+
 .genres-select__control {
-    width: 250px;
-    border: 2px solid #fff !important;
+    width: 260px;
+    border: 1px solid #fff !important;
 
 }
 
 .genres-select__selectoption {
-    border: 2px solid #fff !important;
-
+    border: 1px solid #fff !important;
+    
 }
 
 .genres-select__single-value{
@@ -30,11 +32,28 @@
 }
 
 .genres-select__value-container {
-    background-color: #6C6C6C;
+    background-color: #6c6c6c;
+    height:50px;
 }
 
-.genres-select__indicator {
+.genres-select__indicator-separator {
     display: none !important;
+    background: #6c6c6c !important;
+}
+
+.genres-select__indicator{
+    background-color: #6C6C6C !important;
+    height:50px;
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    cursor:pointer;
+    padding:0px  20px 0px 20px !important;
+    
+    svg{
+        color: #ffffff !important;
+    }   
+    
 }
 
 .genres-select__placeholder{
@@ -42,4 +61,5 @@
     line-height: 22px;
     letter-spacing: -0.015em;
     color: #ffffff !important;
+     
 }

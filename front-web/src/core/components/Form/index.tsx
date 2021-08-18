@@ -1,5 +1,7 @@
 import Select from "react-select";
+import{ ReactComponent as Image } from '../../../core/assets/images/seta.svg';
 import './styles.scss';
+
 
 const options = [
     {value: '', label:'TODOS OS GÊNEROS'},
@@ -19,9 +21,11 @@ const Form = () => {
     <div className="form-container">
     <form className="form-content">
       <Select
-      classNamePrefix="genres-select"
-      placeholder="TODOS OS GÊNEROS"
-       options={options} />
+        classNamePrefix="genres-select"
+        placeholder="TODOS OS GÊNEROS"
+        options={options} 
+      />
+      
     </form>
     </div>
   );
