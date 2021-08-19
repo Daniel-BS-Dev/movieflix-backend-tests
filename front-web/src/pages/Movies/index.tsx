@@ -1,18 +1,20 @@
 import Form from '../../core/components/Form';
-import ImgImage  from '../../core/assets/images/image.png';
 import './styles.scss';
 import MovieCard from '../MovieCard';
+import { Link } from 'react-router-dom';
 
 const Movie = () => {
     return(
        <div className="movie-container">
           <Form />
           <div className="movie-card">
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
+              <Link to="/movie/1"><MovieCard /></Link>
+              <Link to="/movie/2"><MovieCard /></Link>
+              <Link to="/movie/3"><MovieCard /></Link>
+              <Link to="/movie/4"><MovieCard /></Link>
+              
+                
+            
         </div>
        </div>
     );

@@ -1,5 +1,4 @@
 import Select from "react-select";
-import{ ReactComponent as Image } from '../../../core/assets/images/seta.svg';
 import './styles.scss';
 
 
