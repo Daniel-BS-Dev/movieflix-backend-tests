@@ -15,7 +15,7 @@ const Auth = () => {
      }
 
     return (
-        <div className="auth-container">
+        <div className="auth-container border-box">
             <div className="auth-login">
                 LOGIN
             </div>

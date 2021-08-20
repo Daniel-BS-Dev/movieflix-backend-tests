@@ -17,7 +17,7 @@ const options = [
 const Form = () => {
   return (
 
-    <div className="form-container">
+    <div className="form-container border-box">
     <form className="form-content">
       <Select
         classNamePrefix="genres-select"

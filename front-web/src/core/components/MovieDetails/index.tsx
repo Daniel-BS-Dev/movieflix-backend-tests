@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import ImgImage  from '../../../core/assets/images/image.png';
 import Review from "../Review";
+import Show from "../Review/ShowReview";
 import './styles.scss';
 
 type ParamsType = {
@@ -13,7 +14,7 @@ const MovieDetails = () => {
 
     return(
         <div className="movieDetails-container">
-            <div className="movieDetails-content">
+            <div className="movieDetails-content border-box">
                <img src={ImgImage} alt="movie flix" className="movie-image" />
                <div className="movieDetails-info">
                    <h1 className="movieDetails-title">O Retorno do rei</h1>
@@ -36,7 +37,9 @@ const MovieDetails = () => {
                </div>
             </div>
             <Review />
+            <Show />
            </div>
+    
            
     );
 }

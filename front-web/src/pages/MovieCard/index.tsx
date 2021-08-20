@@ -3,7 +3,7 @@ import './styles.scss';
 
 const MovieCard = () => {
     return(
-           <div className="movie-content">
+           <div className="movie-content border-box">
               <img src={ImgImage} alt="movie flix" className="movie-image" />
               <div className="movie-inf">
                 <h3 className="movie-title">

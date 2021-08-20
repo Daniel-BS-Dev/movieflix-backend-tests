@@ -14,7 +14,7 @@ const Review = () => {
     }
 
     return(
-       <div className="review-container">
+       <div className="review-container border-box">
            <form onSubmit={handleSubmit(onSubmit)} className="review-content" >
                <input 
                  type="text" 
