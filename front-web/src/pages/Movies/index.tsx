@@ -1,17 +1,38 @@
 import Form from '../../core/components/Form';
-import './styles.scss';
 import MovieCard from '../MovieCard';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { makeRequest } from '../../core/utils/request';
+import './styles.scss';
+import { useState } from 'react';
+import { MoviesResponse } from '../../core/types/Movie';
+
 
 const Movie = () => {
+
+    const [movieResponse, setMovieResponse] = useState<MoviesResponse>();
+       console.log(movieResponse);
+
+    useEffect(() => {
+        const params = {
+           page: 0,
+           linePerPage: 5,
+        }
+
+        makeRequest({url:'/movies', params}) 
+        .then(response => setMovieResponse(response.data));
+    }, []);
+   
     return(
        <div className="movie-container">
           <Form />
           <div className="movie-card">
-              <Link to="/movie/1"><MovieCard /></Link>
-              <Link to="/movie/2"><MovieCard /></Link>
-              <Link to="/movie/3"><MovieCard /></Link>
-              <Link to="/movie/4"><MovieCard /></Link>
+             {movieResponse?.content.map(movie => (
+                  <Link to="/movie/1" key={movie.id}>
+                      <MovieCard />
+                  </Link>
+             ))}
+              
               
                 
             
