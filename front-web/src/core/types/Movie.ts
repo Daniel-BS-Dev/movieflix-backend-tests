@@ -14,10 +14,7 @@ export type Movie = {
 }
 
 export type Review = {
-    id: number;
     text: string;
-    movieId: number;
-    user: User[];
 }
 
 export type User = {

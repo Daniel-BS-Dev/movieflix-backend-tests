@@ -29,13 +29,9 @@ const Movie = () => {
           <div className="movie-card">
              {movieResponse?.content.map(movie => (
                   <Link to="/movie/1" key={movie.id}>
-                      <MovieCard />
+                      <MovieCard movie= {movie} />
                   </Link>
              ))}
-              
-              
-                
-            
         </div>
        </div>
     );

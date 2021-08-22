@@ -1,9 +1,10 @@
 import Button from '../../core/components/Button';
 import { useForm } from 'react-hook-form';
 import './styles.scss';
+import { makeLogin } from '../../core/utils/request';
 
 type FormData = {
-    email: string;
+    username: string;
     password: string;
 }
 
@@ -12,6 +13,7 @@ const Auth = () => {
 
      const onSubmit = (data: FormData) => {
          console.log(data);
+         makeLogin(data);
      }
 
     return (
@@ -25,7 +27,7 @@ const Auth = () => {
                     type="email" 
                     className="form-control auth-form"
                     placeholder="Email"
-                    {...register("email", 
+                    {...register("username", 
                     { required: true })}
                     />
                     <input 

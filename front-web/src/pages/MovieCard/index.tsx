@@ -1,19 +1,23 @@
-import ImgImage  from '../../core/assets/images/image.png';
+import { Movie } from '../../core/types/Movie';
 import './styles.scss';
 
-const MovieCard = () => {
+type Props = {
+    movie: Movie;
+}
+
+const MovieCard = ({movie}: Props) => {
     return(
            <div className="movie-content border-box">
-              <img src={ImgImage} alt="movie flix" className="movie-image" />
+              <img src={movie.imgUri} alt={movie.title} className="movie-image" />
               <div className="movie-inf">
                 <h3 className="movie-title">
-                    o retorno do rei
+                    {movie.title}
                 </h3>
                 <h4 className="movie-year">
-                    2013
+                    {movie.year}
                 </h4>
                 <p className="movie-subtitle">
-                   O olho do inimigo está se<br /> movendo.
+                   {movie.subTitle}
                 </p>
               </div>
            </div>
