@@ -2,7 +2,7 @@ import Form from '../../core/components/Form';
 import MovieCard from '../MovieCard';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { makeRequest } from '../../core/utils/request';
+import { makePrivateRequest} from '../../core/utils/request';
 import './styles.scss';
 import { useState } from 'react';
 import { MoviesResponse } from '../../core/types/Movie';
@@ -19,7 +19,7 @@ const Movie = () => {
            linePerPage: 5,
         }
 
-        makeRequest({url:'/movies', params}) 
+        makePrivateRequest({url:'/movies', params}) 
         .then(response => setMovieResponse(response.data));
     }, []);
    
@@ -28,7 +28,7 @@ const Movie = () => {
           <Form />
           <div className="movie-card">
              {movieResponse?.content.map(movie => (
-                  <Link to="/movie/1" key={movie.id}>
+                  <Link to="/movies/1" key={movie.id}>
                       <MovieCard movie= {movie} />
                   </Link>
              ))}

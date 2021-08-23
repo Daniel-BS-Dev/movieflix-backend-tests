@@ -21,7 +21,7 @@ const Auth = () => {
          .then(response => {
              setHasError(false);
              saveSessionData(response.data);
-             history.push('/movie');
+             history.push('/movies');
          })
          .catch(() => {
            setHasError(true)

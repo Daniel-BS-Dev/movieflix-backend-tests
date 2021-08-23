@@ -1,5 +1,5 @@
 import axios, {Method} from 'axios';
-import { CLIENT_ID, CLIENT_SECRET } from './auth';
+import { CLIENT_ID, CLIENT_SECRET, getSessionData } from './auth';
 import qs from 'qs';
 
 type RequestParams = {
@@ -25,6 +25,16 @@ export const makeRequest = ({method='GET', url, data, params, headers}: RequestP
       params,
       headers
     });
+}
+export const makePrivateRequest = ({method='GET', url, data, params}: RequestParams) => {
+   const saveSessionData = getSessionData();
+
+   const headers = {
+    'Authorization' : `Bearer ${saveSessionData.access_token}`
+  }
+
+  return makeRequest({method, url, data, headers});
+
 }
 
 export const makeLogin = (loginData:LoginData) =>{
