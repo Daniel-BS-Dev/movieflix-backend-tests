@@ -2,7 +2,6 @@
     padding: 70px 50px 130px 50px;
     display: block;
     justify-content: center;
-    //align-items: center;
 
     .auth-login{
         margin-bottom: 35px;
@@ -13,6 +12,10 @@
         color: #FFFFFF;
         
     }
+}
+.alert{
+ background-color: rgb(245, 63, 63);
+ opacity: 1;
 }
 
 .auth-form{

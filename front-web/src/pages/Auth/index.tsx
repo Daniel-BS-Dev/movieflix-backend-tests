@@ -2,6 +2,9 @@ import Button from '../../core/components/Button';
 import { useForm } from 'react-hook-form';
 import './styles.scss';
 import { makeLogin } from '../../core/utils/request';
+import { useState } from 'react';
+import { saveSessionData } from '../../core/utils/auth';
+import { useHistory } from 'react-router-dom';
 
 type FormData = {
     username: string;
@@ -10,10 +13,19 @@ type FormData = {
 
 const Auth = () => {
      const { register, handleSubmit } = useForm<FormData>();
+     const [hasError, setHasError] = useState(false);
+     const history = useHistory();
 
      const onSubmit = (data: FormData) => {
-         console.log(data);
-         makeLogin(data);
+         makeLogin(data)
+         .then(response => {
+             setHasError(false);
+             saveSessionData(response.data);
+             history.push('/movie');
+         })
+         .catch(() => {
+           setHasError(true)
+         })
      }
 
     return (
@@ -21,6 +33,12 @@ const Auth = () => {
             <div className="auth-login">
                 LOGIN
             </div>
+            {hasError && (
+                 <div className="alert alert-danger alert">
+                    Usuario ou senha incorreto
+                 </div>
+            )}
+           
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input 
@@ -35,7 +53,7 @@ const Auth = () => {
                     className="form-control auth-form"
                     placeholder="Senha"
                     {...register("password", 
-                    { required: true })}
+                    { required: true, minLength:6 })}
                     />
                     <Button text="fazer login"/>
                 </form>  
