@@ -28,7 +28,7 @@ const Movie = () => {
           <Form />
           <div className="movie-card">
              {movieResponse?.content.map(movie => (
-                  <Link to="/movies/1" key={movie.id}>
+                  <Link to={`/movies/${movie.id}`} key={movie.id}>
                       <MovieCard movie= {movie} />
                   </Link>
              ))}
