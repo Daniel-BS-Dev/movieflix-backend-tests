@@ -6,32 +6,39 @@ import { makePrivateRequest} from '../../core/utils/request';
 import './styles.scss';
 import { useState } from 'react';
 import { MoviesResponse } from '../../core/types/Movie';
+import MovieCardLoader from '../../core/components/Loaders/MovieCardLoader';
 
 
 const Movie = () => {
 
     const [movieResponse, setMovieResponse] = useState<MoviesResponse>();
-       console.log(movieResponse);
+    const [isLoader, SetIsLoader] = useState(false);
 
     useEffect(() => {
         const params = {
            page: 0,
-           linePerPage: 5,
+           linePerPage: 30,
         }
 
+        SetIsLoader(true);
         makePrivateRequest({url:'/movies', params}) 
-        .then(response => setMovieResponse(response.data));
+        .then(response => setMovieResponse(response.data))
+        .finally(() => {
+           SetIsLoader(false);
+        })
     }, []);
    
     return(
        <div className="movie-container">
           <Form />
           <div className="movie-card">
-             {movieResponse?.content.map(movie => (
+             {isLoader ? <MovieCardLoader  /> : (
+               movieResponse?.content.map(movie => (
                   <Link to={`/movies/${movie.id}`} key={movie.id}>
                       <MovieCard movie= {movie} />
                   </Link>
-             ))}
+               ))
+             )}
         </div>
        </div>
     );
