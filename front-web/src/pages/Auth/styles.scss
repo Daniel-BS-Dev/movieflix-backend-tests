@@ -14,8 +14,25 @@
     }
 }
 .alert{
- background-color: rgb(245, 63, 63);
+ background-color: #EEC700;
  opacity: 1;
+ margin-bottom: 30px;
+}
+
+.auth-invalid{
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#f00;
+    padding: 0px;
+    margin: 0px;
+}
+
+.auth-content{
+    margin-bottom: 30px;
+}
+
+.invalid{
+   color: #FFC700;
 }
 
 .auth-form{
@@ -24,7 +41,6 @@
     box-sizing: border-box;
     border-radius: 4px;
     width: 390px;
-    margin-bottom: 30px;
     line-height: 22px;
     letter-spacing: -0.015em;
     color: #263238;

@@ -12,7 +12,7 @@ type FormData = {
 }
 
 const Auth = () => {
-     const { register, handleSubmit } = useForm<FormData>();
+     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
      const [hasError, setHasError] = useState(false);
      const history = useHistory();
 
@@ -35,26 +35,45 @@ const Auth = () => {
             </div>
             {hasError && (
                  <div className="alert alert-danger alert">
-                    Usuario ou senha incorreto
+                    <p className="auth-invalid">Usuário ou Senha Incorreto</p>
                  </div>
             )}
            
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input 
-                    type="email" 
-                    className="form-control auth-form"
-                    placeholder="Email"
-                    {...register("username", 
-                    { required: true })}
-                    />
-                    <input 
-                    type="password" 
-                    className="form-control auth-form"
-                    placeholder="Senha"
-                    {...register("password", 
-                    { required: true, minLength:6 })}
-                    />
+                    <div className="auth-content">
+                        <input 
+                            type="email" 
+                            className={`form-control auth-form ${ errors.username ? 'is-invalid' : ''}`}
+                            placeholder="Email"
+                            {...register("username", 
+                            { required: "Campo Obrigatório",
+                              pattern: {
+                                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                  message: "Email Inválid"
+                              }
+                            })}
+                        />
+                        {errors.username && (
+                           <div className="invalid-feedback d-block invalid">
+                               {errors.username.message}
+                           </div>
+                        )}
+                    </div>
+                    <div className="auth-content">
+                        <input 
+                            type="password" 
+                            className={`form-control auth-form ${errors.password ? 'is-invalid' : ''}`}
+                            placeholder="Senha"
+                            {...register("password", 
+                            { required: "Campo Obrigatório", minLength:6 })}
+                        />
+                        {errors.password && (
+                            <div className="invalid-feedback d-block invalid">
+                              {errors.password.message}
+                            </div>
+                        )}
+                    </div>
                     <Button text="fazer login"/>
                 </form>  
             </div>
