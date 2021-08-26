@@ -33,7 +33,7 @@ export const makePrivateRequest = ({method='GET', url, data, params}: RequestPar
     'Authorization' : `Bearer ${saveSessionData.access_token}`
   }
 
-  return makeRequest({method, url, data, headers});
+  return makeRequest({method, url, data, params, headers});
 
 }
 

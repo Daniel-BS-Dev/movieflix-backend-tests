@@ -7,17 +7,19 @@ import './styles.scss';
 import { useState } from 'react';
 import { MoviesResponse } from '../../core/types/Movie';
 import MovieCardLoader from '../../core/components/Loaders/MovieCardLoader';
+import Pagination from '../../core/components/Pagination';
 
 
 const Movie = () => {
 
     const [movieResponse, setMovieResponse] = useState<MoviesResponse>();
     const [isLoader, SetIsLoader] = useState(false);
+    const [isActive, setIsActive] = useState(0);
 
     useEffect(() => {
         const params = {
-           page: 0,
-           linePerPage: 30,
+           page: isActive,
+           linesPerPage: 4,
         }
 
         SetIsLoader(true);
@@ -26,7 +28,7 @@ const Movie = () => {
         .finally(() => {
            SetIsLoader(false);
         })
-    }, []);
+    }, [isActive]);
    
     return(
        <div className="movie-container">
@@ -40,6 +42,13 @@ const Movie = () => {
                ))
              )}
         </div>
+          {movieResponse && (
+            <Pagination 
+               totalPages = {movieResponse.totalPages}
+               isActive = {isActive}
+               onChange = {page => setIsActive(page)}
+            />
+          )}
        </div>
     );
 }
