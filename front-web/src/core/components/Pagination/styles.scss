@@ -19,7 +19,7 @@
     line-height: 25px;
     letter-spacing: -0.015em;
     margin-left: 10px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     cursor: pointer;
 
     &.active{
@@ -29,14 +29,24 @@
 
 .pagination-previous{
     margin-right: 5px;
-    color: #6C6C6C;
-    cursor: pointer;
+   
 }
 
 .pagination-next{
     transform: rotate(180deg);
     margin-left: 15px;
+    cursor: pointer;   
+
+}
+
+.active{
     color: #FFC700;
     cursor: pointer;
 
+}
+
+.inactive{
+    color: #6C6C6C;
+    pointer-events: none;
+    
 }

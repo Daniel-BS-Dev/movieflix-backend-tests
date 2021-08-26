@@ -2,7 +2,7 @@ import ContentLoader from "react-content-loader"
 import { generateList } from "../../../utils/list";
 
 const MovieCardLoader = () => {
-   const laoderItems = generateList(8);
+   const laoderItems = generateList(4);
 
     return(
         <>

@@ -10,10 +10,15 @@ type Props = {
 
 const Pagination = ({totalPages, isActive, onChange}: Props) => {
     const items = generateList(totalPages);
+    const previousClass = totalPages > 0 && isActive > 0 ? 'active' : 'inactive';
+    const nextClass = (isActive + 1) < totalPages ? 'active' : 'inactive';
 
     return(
        <div className="pagination-container">
-        <Seta  className="pagination-previous" /> 
+        <Seta  
+           className={`pagination-previous ${previousClass}`} 
+           onClick = {() => onChange(isActive - 1)}
+         /> 
         {items.map(item => (
            <div 
               key={item}
@@ -23,7 +28,10 @@ const Pagination = ({totalPages, isActive, onChange}: Props) => {
              {item + 1}
            </div>
         ))}
-        <Seta  className="pagination-next" /> 
+        <Seta  
+           className= {`pagination-next ${nextClass}`} 
+           onClick = {() => onChange(isActive + 1)}
+        /> 
        </div>
     );
 }
