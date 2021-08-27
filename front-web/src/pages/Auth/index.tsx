@@ -50,7 +50,7 @@ const Auth = () => {
                             { required: "Campo Obrigatório",
                               pattern: {
                                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                  message: "Email Inválid"
+                                  message: "Email Inválido"
                               }
                             })}
                         />

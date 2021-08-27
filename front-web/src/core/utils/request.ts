@@ -1,6 +1,7 @@
 import axios, {Method} from 'axios';
 import { CLIENT_ID, CLIENT_SECRET, getSessionData } from './auth';
 import qs from 'qs';
+import history from './history';
 
 type RequestParams = {
    url: string;
@@ -16,6 +17,17 @@ type LoginData = {
 }
 
 const BASE_URL = 'http://localhost:3000';
+
+axios.interceptors.response.use(function(config){
+  return config;
+
+}, function(error){
+  if(error.response.status === 401){
+    history.push('/');
+  }
+  return Promise.reject(error);
+
+});
 
 export const makeRequest = ({method='GET', url, data, params, headers}: RequestParams) => {
     return axios({

@@ -1,12 +1,13 @@
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Router, Switch, Route} from 'react-router-dom';
 import HeaderBar from './core/components/Header';
 import MovieDetails from './core/components/MovieDetails';
 import Home from './pages/Home';
 import Movie from './pages/Movies';
+import history from './core/utils/history';
 
 const Routes = () =>(
       
-    <BrowserRouter>
+    <Router history={history}>
         <HeaderBar />
     <Switch>
       <Route path="/" exact>
@@ -19,7 +20,7 @@ const Routes = () =>(
           <MovieDetails />
       </Route>
     </Switch>
-  </BrowserRouter>
+  </Router>
   
 );
 
