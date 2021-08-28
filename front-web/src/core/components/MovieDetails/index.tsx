@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Movie } from "../../types/Movie";
+import { isAllowedByRole } from "../../utils/auth";
 import { makePrivateRequest } from "../../utils/request";
 import MovieInfoLoader from "../Loaders/MovieDetailsLoader/Image";
 import MovieImageLoader from "../Loaders/MovieInfoLoader";
@@ -62,7 +63,10 @@ const MovieDetails = () => {
                     </>
                     )}
             </div>
-            <Review />
+            {isAllowedByRole(['ROLE_MEMBER']) && (
+                 <Review />
+            )}
+            
             <Show />
            </div>
     
