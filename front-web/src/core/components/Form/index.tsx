@@ -1,28 +1,42 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import Select from "react-select";
+import { GenreId, Movie} from "../../types/Movie";
+import { makePrivateRequest } from "../../utils/request";
 import './styles.scss';
 
+type stateForm = {
+  genreId? : GenreId;
+}
 
-const options = [
-    {value: '', label:'TODOS OS GÊNEROS'},
-    {value: '1', label:'AÇÃO'},
-    {value: '2', label:'AVENTURA'},
-    {value: '3', label:'COMEDIA'},
-    {value: '4', label:'ROMANCE'},
-    {value: '5', label:'TERROR'},
-    {value: '6', label:'FAMILIA'},
-    {value: '7', label:'FANTANSIA'},
-    {value: '8', label:'DRAMA'},
-
-]
 const Form = () => {
+  const {register, handleSubmit} = useForm< stateForm>();
+  const [genres, setGenres] = useState<GenreId>();
+
+  const onSubmit = (data:  stateForm) => {
+    makePrivateRequest({url: '/genres'});
+        console.log(data);
+
+  }
+
+  const options = [
+    { value: {}, label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+
   return (
 
+
     <div className="form-container border-box">
-    <form className="form-content">
+    <form  onSubmit={handleSubmit(onSubmit)} className="form-content">
       <Select
         classNamePrefix="genres-select"
         placeholder="TODOS OS GÊNEROS"
-        options={options} 
+        options={options}
+        //getOptionValue={(Option: GenreId) => Option.id}
+        //getOptionLabel={(Option: GenreId) => Option.name} 
+        
       />
       
     </form>

@@ -1,10 +1,12 @@
 import Button from '../../core/components/Button';
 import { useForm } from 'react-hook-form';
-import './styles.scss';
+import { toast } from 'react-toastify';
 import { makeLogin } from '../../core/utils/request';
 import { useState } from 'react';
 import { saveSessionData } from '../../core/utils/auth';
 import { useHistory } from 'react-router-dom';
+import './styles.scss';
+
 
 type FormData = {
     username: string;
@@ -19,11 +21,14 @@ const Auth = () => {
      const onSubmit = (data: FormData) => {
          makeLogin(data)
          .then(response => {
+             toast.info('Login efetuado com sucesso');
              setHasError(false);
              saveSessionData(response.data);
              history.push('/movies');
+            
          })
          .catch(() => {
+           toast.error('Erro ao efetuar login. Verifique os dados e tente novamente');
            setHasError(true)
          })
      }
@@ -38,7 +43,7 @@ const Auth = () => {
                     <p className="auth-invalid">Usuário ou Senha Incorreto</p>
                  </div>
             )}
-           
+        
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="auth-content">
@@ -74,7 +79,9 @@ const Auth = () => {
                             </div>
                         )}
                     </div>
+                    
                     <Button text="fazer login"/>
+
                 </form>  
             </div>
         </div>

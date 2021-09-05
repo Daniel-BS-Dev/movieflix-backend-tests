@@ -24,3 +24,9 @@ export type User = {
     email: string;
     reviews: Review[];
 }
+
+export type GenreId = {
+    id: number;
+    name: string;
+    movies: Movie[];
+}
