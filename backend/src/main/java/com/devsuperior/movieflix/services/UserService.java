@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.RoleDTO;
 import com.devsuperior.movieflix.dto.UserDTO;
+import com.devsuperior.movieflix.dto.UserDTOReviews;
 import com.devsuperior.movieflix.dto.UserDTOUpdate;
 import com.devsuperior.movieflix.dto.UserInsertDTO;
 import com.devsuperior.movieflix.entities.Role;
@@ -52,9 +53,9 @@ public class UserService implements UserDetailsService {
 	}
 	
 	@Transactional(readOnly = true)
-	public List<UserDTO> findAll(){
+	public List<UserDTOReviews> findAll(){
 	List<User> list = repository.findAll();
-	return list.stream().map(x -> new UserDTO(x, x.getReviews())).collect(Collectors.toList());
+	return list.stream().map(x -> new UserDTOReviews(x, x.getReviews())).collect(Collectors.toList());
 	
    }
 	  

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.devsuperior.movieflix.dto.UserDTO;
+import com.devsuperior.movieflix.dto.UserDTOReviews;
 import com.devsuperior.movieflix.dto.UserDTOUpdate;
 import com.devsuperior.movieflix.dto.UserInsertDTO;
 import com.devsuperior.movieflix.services.UserService;
@@ -27,8 +28,8 @@ public class UserResource {
 	private UserService service;
 	
 	@GetMapping
-	public ResponseEntity<List<UserDTO>> findAll(){
-		   List<UserDTO> list = service.findAll();
+	public ResponseEntity<List<UserDTOReviews>> findAll(){
+		   List<UserDTOReviews> list = service.findAll();
 		   return ResponseEntity.ok().body(list);
 		   
     }
