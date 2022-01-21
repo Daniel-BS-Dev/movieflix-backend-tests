@@ -12,8 +12,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.devsuperior.movieflix.dto.RoleDTO;
 import com.devsuperior.movieflix.dto.UserDTO;
+import com.devsuperior.movieflix.dto.UserInsertDTO;
+import com.devsuperior.movieflix.entities.Role;
 import com.devsuperior.movieflix.entities.User;
+import com.devsuperior.movieflix.repositories.RoleRepository;
 import com.devsuperior.movieflix.repositories.UserRepository;
 
 @Service
@@ -23,6 +27,9 @@ public class UserService implements UserDetailsService {
 	
 	@Autowired
 	private UserRepository repository;
+	
+	@Autowired
+	private RoleRepository roleRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -37,10 +44,34 @@ public class UserService implements UserDetailsService {
 		return user;
 		
 	}
-	  @Transactional(readOnly = true)
-	  public List<UserDTO> findAll(){
-		List<User> list = repository.findAll();
-		return list.stream().map(x -> new UserDTO(x, x.getReviews())).collect(Collectors.toList());
+	
+	@Transactional(readOnly = true)
+	public List<UserDTO> findAll(){
+	List<User> list = repository.findAll();
+	return list.stream().map(x -> new UserDTO(x, x.getReviews())).collect(Collectors.toList());
 	
    }
+	  
+	@Transactional
+	public UserInsertDTO insert(UserInsertDTO dto) {
+		
+		User user = new User();
+		
+		user.setName(dto.getName());
+		user.setEmail(dto.getEmail());
+		user.setPassword(dto.getPassword());
+		
+		for(RoleDTO roles : dto.getRoles()) {
+			Role role = roleRepository.findById(roles.getId()).get();
+			user.getRoles().add(role);
+		}
+		
+		user = repository.save(user);
+		
+		
+		return new UserInsertDTO(user);
+	}
+	  
+   
+	  
 }
