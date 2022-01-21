@@ -27,6 +27,7 @@ public class GenreService {
 		
 	
 	}
+	
 	@Transactional(readOnly = true)
 	public GenreDTO findById(Long id) {
 		Optional<Genre> obj = repository.findById(id);

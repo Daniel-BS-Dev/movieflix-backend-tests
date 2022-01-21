@@ -25,6 +25,7 @@ public class GenreResource {
 		   return ResponseEntity.ok().body(list);
 		 
 	}
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<GenreDTO> findById(@PathVariable Long id){
 		GenreDTO dto = service.findById(id);
