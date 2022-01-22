@@ -5,7 +5,6 @@
 .content-navbar {
   display: flex;
   align-items: center;
-  
 }
 
 .navbar-title {
@@ -20,14 +19,14 @@
   align-items: center;
 }
 
-.conatiner-ul {
+.container-ul {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.conatiner-ul li {
+.container-ul li {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -35,13 +34,14 @@
   color: #fff;
 }
 
-.conatiner-ul li svg {
+
+.container-ul li svg {
   height: 20px;
   margin-bottom: 4px;
   margin-right: 3px;
 }
 
-.conatiner-ul .svg-home svg {
+.container-ul .svg-home svg {
   height: 16px;
   margin-right: 5px;
 }
@@ -55,10 +55,14 @@
   text-transform: uppercase;
 }
 
+.container-ul .active {
+    font-weight: bolder;
+    color: #ffff00;
+  }
+
 @media screen and (min-width: 586px) {
   .container-nav {
     flex-direction: row;
-    
   }
 
   .container-nav h3 {
@@ -72,11 +76,10 @@
 
   .conatiner-ul {
     width: 500px;
- 
   }
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .navbar-title {
     width: 25%;
     display: block;
@@ -84,52 +87,42 @@
     line-height: 33px;
     letter-spacing: -0.015em;
     color: #fff;
-
   }
 
   .container-nav {
     flex: 1;
-
   }
 
   .conatiner-ul {
     width: 80%;
-    
   }
 
   .container-nav h3 {
     width: 20%;
     margin-bottom: 0px;
-
   }
-
-
 }
 
 @media screen and (min-width: 1200px) {
-    .navbar-title {
-        width: 20%;
-        display: block;
-        font-size: 24px;
-        line-height: 33px;
-        letter-spacing: -0.015em;
-        color: #fff;
-    
-      }
-    
-      .container-nav {
-        flex: 1;
-    
-      }
-    
-      .conatiner-ul {
-        width: 700px;
-        
-      }
-    
-      .container-nav h3 {
-        flex: 1;
-        margin-bottom: 0px;
-    
-      }
+  .navbar-title {
+    width: 20%;
+    display: block;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.015em;
+    color: #fff;
+  }
+
+  .container-nav {
+    flex: 1;
+  }
+
+  .conatiner-ul {
+    width: 700px;
+  }
+
+  .container-nav h3 {
+    flex: 1;
+    margin-bottom: 0px;
+  }
 }
