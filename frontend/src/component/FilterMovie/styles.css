@@ -1,0 +1,51 @@
+form {
+  display: flex;
+  width: 90px;
+}
+
+form button {
+  background: none;
+  color: white;
+  padding: 0px;
+}
+
+form input {
+  width: 70px;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+form input::placeholder {
+  color: #fff;
+}
+
+.conatiner-ul .svg-lupa svg {
+  height: 25px;
+  margin-bottom: 2px;
+}
+
+@media screen and (min-width: 360px) {
+  form input {
+    width: 90px;
+  }
+
+}
+
+@media screen and (min-width: 400px) {
+    form input {
+      width: 100px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    form input {
+      width: 130px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    form input {
+      width: 160px;
+    }
+}
