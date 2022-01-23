@@ -1,23 +1,23 @@
-form {
+.form-filter-movie {
   display: flex;
   width: 90px;
 }
 
-form button {
+.form-filter-movie button {
   background: none;
-  color: white;
+  color: #bcbcbc;
   padding: 0px;
 }
 
-form input {
+.form-filter-movie input {
   width: 70px;
   background: none;
   border: none;
-  color: #fff;
+  color: #bcbcbc;
 }
 
-form input::placeholder {
-  color: #fff;
+.form-filter-movie input::placeholder {
+  color: #bcbcbc;
 }
 
 .conatiner-ul .svg-lupa svg {
@@ -26,26 +26,26 @@ form input::placeholder {
 }
 
 @media screen and (min-width: 360px) {
-  form input {
+  .form-filter-movie input {
     width: 90px;
   }
 
 }
 
 @media screen and (min-width: 400px) {
-    form input {
+    .form-filter-movie input {
       width: 100px;
     }
 }
 
 @media screen and (min-width: 500px) {
-    form input {
+    .form-filter-movie input {
       width: 130px;
     }
 }
 
 @media screen and (min-width: 950px) {
-    form input {
+    .form-filter-movie input {
       width: 160px;
     }
 }

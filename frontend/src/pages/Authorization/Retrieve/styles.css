@@ -1,0 +1,104 @@
+.container-retrieve{
+    width:100%;
+    padding:40px 10px;
+    border-radius:4px;
+    text-align:center;
+    background: #1c1c1c;
+}
+
+.container-retrieve h1{
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    margin-bottom:20px
+ }
+
+ .form-retrieve input{
+    height:50px;
+    margin-top:20px;
+}
+
+.button-retrieve{
+   margin-top:30px;
+}
+
+.button-retrieve button{
+    height:50px;
+    width:85%;
+}
+
+@media screen and (min-width:360px){
+    .container-retrieve{
+       padding:50px 10px;
+       
+     }
+     
+    .button-retrieve{
+      margin-top:70px;
+     }
+ 
+}
+
+@media screen and (min-width:390px){
+    .container-retrieve{
+       padding:80px 10px;
+        
+    }
+
+    .container-retrieve h1{
+        margin-bottom:60px
+     }
+
+     .form-retrieve input{
+        margin-top:30px;
+    }
+       
+     .button-retrieve{
+       margin-top:110px;
+    }
+   
+}
+
+@media screen and (min-width: 520px){
+    .container-retrieve{
+        width:480px;
+        padding:60px 20px;
+      
+    }
+
+    .container-retrieve h1{
+        margin-bottom:20px
+     }
+
+    .form-retrieve input:nth-child(2){
+        margin-top:20px;
+    }
+
+    .button-retrieve{
+        margin-top:50px;
+     }
+}
+
+@media screen and (min-width: 992px){
+    .container-retrieve{
+        width:480px;
+        padding:60px 20px;
+      
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+    .container-retrieve{
+        width:520px;
+        padding:60px 20px;
+      
+    }
+
+    .button-retrieve button{
+        width:65%;
+    }
+
+}

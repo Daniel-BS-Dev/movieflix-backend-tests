@@ -1,15 +1,19 @@
 .container-authorization {
   width: 100%;
+  min-height:calc(100vh - 20px);
   color: #bcbcbc;
+  padding: 0px 10px;
+  background: #000;
+
 }
 
 .header-authorization {
   width: 100%;
-  height: 70px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 30px;
+  margin-bottom:20px;
 
 }
 
@@ -18,6 +22,7 @@
   line-height: 33px;
   letter-spacing: -0.015em;
   color: #2ccb69f2;
+  margin-bottom:20px;
 }
 
 .git-authorization{
@@ -26,9 +31,90 @@
 
 }
 
+.name-authorization{
+  font-size:15px;
+  margin-left:5px;
+}
+
 .git-authorization svg{
     color: rgba(44, 203, 105, 0.95);
 
 }
 
+.info-text-authorization{
+  display:none;
+}
 
+.links-authorization{
+  padding:0px 0px 30px 0px;
+
+}
+
+.container-links{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding-bottom:10px;
+  
+}
+
+.links-authorization{
+  flex:1;
+
+}
+
+@media screen and (min-width:414px){
+  .header-authorization {
+    margin-bottom:40px;
+  
+  }
+
+}
+
+@media screen and (min-width: 500px){
+  .links-authorization{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .header-authorization {
+    margin-bottom:10px;
+  
+  }
+  .container-links{
+    display:flex;
+    justify-content:space-around;
+    padding:0px 20px;
+    
+  }
+
+  .info-text-authorization{
+    display:block;
+    margin-right:40px;
+    flex:1;
+  }
+
+
+  .info-text-authorization svg{
+    width:390px;
+    height:350px;
+  }
+
+  .links-authorization{
+    flex:0;
+  
+  }
+  
+}
+
+@media screen and (min-width: 1200px){
+  .container-links{
+    padding:0px 90px;
+    
+  }
+
+}
