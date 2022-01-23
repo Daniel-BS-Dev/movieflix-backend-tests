@@ -57,7 +57,7 @@
 
 .container-ul .active {
     font-weight: bolder;
-    color: #ffff00;
+    color: rgba(44, 203, 105, 0.95);
   }
 
 @media screen and (min-width: 586px) {

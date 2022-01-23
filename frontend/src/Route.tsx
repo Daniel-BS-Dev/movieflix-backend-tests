@@ -8,7 +8,8 @@ import MovieDetails from './pages/MoviesDetails';
 const DRoutes = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<Authorization />} />
+      <Route path="/" element={<Navigate replace to="/login" />} />
+      <Route path="/*" element={<Authorization />} />
       <Route path="/home" element={<Home />} />
       <Route path="/movies" element={<Movies />} />
       <Route path="/movies/:id" element={<MovieDetails />} />

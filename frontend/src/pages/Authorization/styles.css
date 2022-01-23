@@ -1,0 +1,34 @@
+.container-authorization {
+  width: 100%;
+  color: #bcbcbc;
+}
+
+.header-authorization {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+
+}
+
+.header-authorization h1 {
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -0.015em;
+  color: #2ccb69f2;
+}
+
+.git-authorization{
+    display: flex;
+    color: rgba(44, 203, 105, 0.95);
+
+}
+
+.git-authorization svg{
+    color: rgba(44, 203, 105, 0.95);
+
+}
+
+
