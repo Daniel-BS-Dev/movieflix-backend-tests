@@ -1,0 +1,144 @@
+.image{
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+   
+}
+
+.rec-slider-container{
+    height:100%;
+    position: absolute;
+    border-radius: 10px;
+    margin: 0px !important;
+}
+
+.rec-carousel-wrapper{
+    background: black;
+    border-radius: 10px;
+}
+
+.rec-pagination {
+    display: none !important;
+}
+
+
+.carousel button{
+    display: none !important;
+    
+}
+
+.div-image{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.div-image div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    padding: 0px 5px;
+    z-index:10;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.arrow-lef{
+    transform: rotate(180deg);
+}
+
+
+.arrow:hover{
+    color: green;
+}
+
+.slider-info{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 65%;
+    bottom:0px;
+    padding-left:10px;
+    z-index: 1;
+
+}
+
+.slider-info P, h1{
+    max-width: 100%;
+    text-align: end;
+    word-break: break-all;
+}
+
+.slider-info P{
+    margin-top: -10px;
+   
+}
+
+
+@media screen and (min-width:576px){
+    .image{
+       width: 100vw;
+       height: 300px;
+       
+    }
+
+    .div-image div{
+        padding: 0px 30px;
+      
+    }
+
+    .slider-info{
+        padding-left:30px;
+    
+    }
+
+    .slider-info P{
+        margin-top: -5px;
+       
+    }
+}
+
+@media screen and (min-width:768px){
+    .image{
+       width: 100vw;
+       height: 330px;
+       
+    }
+
+    .slider-info{
+        padding-left:40px;
+    
+    }
+}
+
+@media screen and (min-width:992px){
+    .image{
+       width: 100vw;
+       height: 360px;
+       
+    }
+
+    .slider-info{
+        padding-left:60px;
+    
+    }
+}
+
+@media screen and (min-width:1200px){
+    .image{
+       width: 100vw;
+       height: 390px;
+       
+    }
+
+    .slider-info{
+        padding-left:100px;
+    
+    }
+}

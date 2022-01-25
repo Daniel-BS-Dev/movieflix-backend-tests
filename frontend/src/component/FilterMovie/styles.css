@@ -5,7 +5,7 @@
 
 .form-filter-movie button {
   background: none;
-  color: #bcbcbc;
+  color: #fff;
   padding: 0px;
 }
 
@@ -13,11 +13,11 @@
   width: 70px;
   background: none;
   border: none;
-  color: #bcbcbc;
+  color: #fff;
 }
 
 .form-filter-movie input::placeholder {
-  color: #bcbcbc;
+  color: #fff;
 }
 
 .conatiner-ul .svg-lupa svg {

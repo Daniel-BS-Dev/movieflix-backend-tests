@@ -1,0 +1,46 @@
+.container-home{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-home{
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+  
+}
+
+.slider-home{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 30px;
+    z-index: 10;
+  
+  
+}
+
+.list-image-home{
+    position: relative;
+    background: blue;
+    z-index: 1;
+    top: 30px;
+    width: 100%;
+    
+}
+
+
+@media screen and (min-width:586px){
+    .slider-home{
+        top: 0px;
+
+    }
+    
+    .navbar-home{
+        border-radius: 10px;
+        background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.5),rgba(0,0,0,0));
+    }
+}
+

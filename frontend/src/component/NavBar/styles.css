@@ -31,7 +31,7 @@
   justify-content: flex-end;
   align-items: center;
   font-size: 16px;
-  color: #bcbcbc;
+  color: #fff;
 }
 
 
@@ -50,7 +50,7 @@
   width: 100%;
   text-align: end;
   font-size: 15px;
-  color: #bcbcbc;
+  color: #fff;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -70,7 +70,7 @@
     width: auto;
     text-align: end;
     font-size: 15px;
-    color: #bcbcbc;
+    color: #fff;
     margin-bottom: 0px;
   }
 
@@ -86,7 +86,7 @@
     font-size: 24px;
     line-height: 33px;
     letter-spacing: -0.015em;
-    color: #bcbcbc;
+    color: #fff;
   }
 
   .container-nav {
@@ -110,7 +110,7 @@
     font-size: 24px;
     line-height: 33px;
     letter-spacing: -0.015em;
-    color: #bcbcbc;
+    color: #fff;
   }
 
   .container-nav {
