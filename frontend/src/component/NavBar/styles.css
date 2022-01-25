@@ -64,65 +64,32 @@
   .container-nav {
     flex-direction: row;
   }
-
-  .container-nav h3 {
-    flex: 1;
-    width: auto;
-    text-align: end;
-    font-size: 15px;
-    color: #fff;
-    margin-bottom: 0px;
+  .container-ul {
+    width: 100%;
+    justify-content: space-between;
+   
   }
 
-  .conatiner-ul {
-    width: 500px;
+  .container-nav h3 {
+    width: 50%;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+   
   }
 }
 
 @media screen and (min-width: 768px) {
   .navbar-title {
     width: 25%;
-    display: block;
+    display: flex;
+    justify-content: flex-start;
     font-size: 24px;
     line-height: 33px;
     letter-spacing: -0.015em;
     color: #fff;
+    
   }
 
-  .container-nav {
-    flex: 1;
-  }
-
-  .conatiner-ul {
-    width: 80%;
-  }
-
-  .container-nav h3 {
-    width: 20%;
-    margin-bottom: 0px;
-  }
 }
 
-@media screen and (min-width: 1200px) {
-  .navbar-title {
-    width: 20%;
-    display: block;
-    font-size: 24px;
-    line-height: 33px;
-    letter-spacing: -0.015em;
-    color: #fff;
-  }
 
-  .container-nav {
-    flex: 1;
-  }
-
-  .conatiner-ul {
-    width: 700px;
-  }
-
-  .container-nav h3 {
-    flex: 1;
-    margin-bottom: 0px;
-  }
-}

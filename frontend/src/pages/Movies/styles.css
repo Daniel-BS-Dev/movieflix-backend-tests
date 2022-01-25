@@ -1,0 +1,34 @@
+.movie-container {
+  min-height: calc(100vh - 20px);
+  background: black;
+  border-radius: 10px;
+}
+
+.movie-container h3,
+.movie-container .content-navbar h1,
+.movie-container .container-navbar .container-nav .container-ul li,
+.movie-container
+  .container-navbar
+  .container-nav
+  .container-ul
+  li
+  .form-filter-movie
+  button,
+.movie-container
+  .container-navbar
+  .container-nav
+  .container-ul
+  li
+  .form-filter-movie
+  input::placeholder {
+  color: #bcbcbc;
+}
+
+.container-list-card-movie {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  grid-gap: 20px 2px;
+  justify-content: space-around;
+}

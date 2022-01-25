@@ -1,11 +1,23 @@
 import NavBar from "../../component/NavBar";
+import CardMovie from "../Movies/cardMovie";
+import './styles.css';
 
 const Movies = () => {
     return(
-      <div>
+      <section className="movie-container">
         <NavBar />
-        <h1>movies</h1>
-      </div>
+        <div className="container-list-card-movie">
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        </div>
+      </section>
+      
     )
   }
   

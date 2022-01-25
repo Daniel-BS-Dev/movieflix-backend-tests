@@ -12,8 +12,8 @@ const Movie = () => {
     }
 
     return(
-       <section className='container-movie'>
-           <div className='content-movie'>
+       <section className='container-movie-home'>
+           <div className='content-movie-home'>
                <img src={movie?.imgUri}/>
            </div>
            <div className='container-name-movie'>
