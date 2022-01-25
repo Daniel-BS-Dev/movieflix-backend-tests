@@ -9,6 +9,7 @@
     width: 100%;
     position: absolute;
     z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1),rgba(0,0,0,0));
   
 }
 
@@ -24,11 +25,34 @@
 
 .list-image-home{
     position: relative;
-    background: blue;
     z-index: 1;
-    top: 30px;
+    top: 35px;
     width: 100%;
     
+}
+
+.catalog-movie-home{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.list-image-home div:nth-child(1){
+    margin-top: 5px;
+ 
+}
+
+
+.catalog-movie-home h2{
+  font-size: 25px;
+  margin-bottom: -2px;
+  color: #bcbcbc;
+}
+
+.movies-home{
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -42,5 +66,10 @@
         border-radius: 10px;
         background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.5),rgba(0,0,0,0));
     }
+
+    .catalog-movie-home h2{
+        font-size: 35px;
+        
+      }
 }
 
