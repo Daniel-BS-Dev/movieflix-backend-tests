@@ -1,0 +1,37 @@
+.container-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-arrow-right{
+    transform: rotate(180deg);
+    margin-right: -10px;
+}
+
+.container-button{
+    margin: 0px 15px;
+}
+
+.container-button button{
+   width: 30px;
+   height: 30px;
+   margin-left: 10px;
+   border-radius: 50%;
+   text-align: center;
+   background: #bcbcbc;
+   color: #1c1c1c;
+   cursor: pointer;
+}
+
+.container-button .active-button{
+    background: rgba(44, 203, 105, 0.95);
+}
+
+.active-arrow{
+    color: rgba(44, 203, 105, 0.95);
+}
+
+.pagination-arrow-right, .pagination-arrow-left{
+    color: #bcbcbc;
+}

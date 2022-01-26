@@ -6,8 +6,15 @@
   border-radius: 4px;
 }
 
-.container-card-movie img {
+.container-card-movie img,
+.container-card-movie-info,
+.container-card-movie-info h2,
+.container-card-movie-info h4,
+.container-card-movie-info p {
   width: 100%;
+}
+
+.container-card-movie img {
   height: auto;
   border-radius: 4px 4px 0px 0px;
 }
@@ -17,21 +24,18 @@
 }
 
 .container-card-movie-info h2 {
-  width: 100%;
   font-size: 20px;
   line-height: 27px;
   color: #bcbcbc;
 }
 
 .container-card-movie-info h4 {
-  width: 100%;
   font-size: 16px;
   line-height: 22px;
   color: rgba(44, 203, 105, 0.95);
 }
 
 .container-card-movie-info p {
-  width: 100%;
   font-size: 14px;
   line-height: 19px;
   color: #bcbcbc;

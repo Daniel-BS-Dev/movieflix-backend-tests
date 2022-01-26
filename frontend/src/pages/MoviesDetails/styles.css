@@ -1,0 +1,19 @@
+.container-movie-details h3,
+.container-movie-details .content-navbar h1,
+.container-movie-details .container-navbar .container-nav .container-ul li,
+.container-movie-details
+  .container-navbar
+  .container-nav
+  .container-ul
+  li
+  .form-filter-movie
+  button,
+.container-movie-details
+  .container-navbar
+  .container-nav
+  .container-ul
+  li
+  .form-filter-movie
+  input::placeholder {
+  color: #bcbcbc;
+}

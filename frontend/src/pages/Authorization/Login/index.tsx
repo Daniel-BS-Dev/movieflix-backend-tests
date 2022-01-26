@@ -10,7 +10,7 @@ const Login = () => {
         <input type="password" placeholder="Senha" className="form-control"/>
         <p><Link to="/retrieve">Esqueci a senha?</Link></p>
         <div className="button-login">
-        <button className="btn btn-success">FAZER LOGIN</button>
+        <Link to="/home"><button className="btn btn-success">FAZER LOGIN</button></Link>
         <p>Não tenho<span><Link to='/register'> CADASTRO</Link></span></p>
         </div>
         </form>

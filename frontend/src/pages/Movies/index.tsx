@@ -1,24 +1,27 @@
 import NavBar from "../../component/NavBar";
+import Pagination from "../../component/Pagination";
 import CardMovie from "../Movies/cardMovie";
-import './styles.css';
+import "./styles.css";
 
 const Movies = () => {
-    return(
-      <section className="movie-container">
-        <NavBar />
-        <div className="container-list-card-movie">
+  return (
+    <section className="movie-container" id="beginning">
+      <NavBar />
+      <div className="container-list-card-movie">
         <CardMovie />
         <CardMovie />
         <CardMovie />
         <CardMovie />
         <CardMovie />
         <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        </div>
-      </section>
-      
-    )
-  }
-  
-  export default Movies;
+      </div>
+      <div className="movies-pagination">
+        <a href="#beginning">
+          <Pagination />
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default Movies;
