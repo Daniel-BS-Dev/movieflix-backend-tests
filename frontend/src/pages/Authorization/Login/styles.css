@@ -97,8 +97,8 @@
         margin-bottom:20px
      }
 
-    .form-login input:nth-child(2){
-        margin-top:20px;
+    .login-error{
+        margin-bottom:20px;
     }
 
     .button-login{

@@ -6,6 +6,7 @@
 .form-filter-movie button {
   background: none;
   color: #fff;
+  margin-right: -5px;
   padding: 0px;
 }
 
@@ -25,27 +26,137 @@
   margin-bottom: 2px;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 320px) {
   .form-filter-movie input {
     width: 90px;
   }
 
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 360px) {
+  .form-filter-movie input {
+    width: 110px;
+  }
+
+}
+
+@media screen and (min-width: 390px) {
+  .form-filter-movie input {
+    width: 125px;
+  }
+
+}
+
+@media screen and (min-width: 420px) {
+  .form-filter-movie input {
+    width: 140px;
+  }
+
+}
+
+
+@media screen and (min-width: 450px) {
+  .form-filter-movie input {
+    width: 155px;
+  }
+
+}
+
+@media screen and (min-width: 480px) {
+  .form-filter-movie input {
+    width: 170px;
+  }
+
+}
+
+
+@media screen and (min-width: 520px) {
     .form-filter-movie input {
-      width: 100px;
+      width: 180px;
     }
 }
 
-@media screen and (min-width: 500px) {
-    .form-filter-movie input {
-      width: 130px;
-    }
+@media screen and (min-width: 550px) {
+  .form-filter-movie input {
+    width: 190px;
+  }
+}
+
+@media screen and (min-width: 570px) {
+  .form-filter-movie input {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 586px) {
+  .form-filter-movie input {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .form-filter-movie input {
+    width: 160px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .form-filter-movie input {
+    width: 170px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .form-filter-movie input {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 710px) {
+  .form-filter-movie input {
+    width: 190px;
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .form-filter-movie input {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .form-filter-movie input {
+    width: 220px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-filter-movie input {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .form-filter-movie input {
+    width: 170px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .form-filter-movie input {
+    width: 190px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .form-filter-movie input {
+    width: 210px;
+  }
 }
 
 @media screen and (min-width: 950px) {
     .form-filter-movie input {
-      width: 160px;
+      width: 260px;
     }
 }
+

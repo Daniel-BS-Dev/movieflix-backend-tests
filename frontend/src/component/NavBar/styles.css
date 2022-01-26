@@ -1,5 +1,5 @@
 .content-navbar {
-  padding: 0px 10px;
+  padding: 0px 10px 0px 5px;
 }
 
 .content-navbar {
@@ -22,7 +22,7 @@
 .container-ul {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -71,7 +71,7 @@
   }
 
   .container-nav h3 {
-    width: 50%;
+    width: 30%;
     margin-bottom: 0px;
     text-transform: uppercase;
    
@@ -80,7 +80,7 @@
 
 @media screen and (min-width: 768px) {
   .navbar-title {
-    width: 25%;
+    width: 20%;
     display: flex;
     justify-content: flex-start;
     font-size: 24px;
@@ -91,5 +91,7 @@
   }
 
 }
+
+
 
 

@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Authorization from './pages/Authorization';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
-import MovieDetails from './pages/MoviesDetails';
+import MoviesDetails from './pages/MoviesDetails';
+import MovieDetails from './pages/MoviesDetails/MovieDetails';
 
 
 const DRoutes = () => (
@@ -12,7 +13,7 @@ const DRoutes = () => (
       <Route path="/*" element={<Authorization />} />
       <Route path="/home" element={<Home />} />
       <Route path="/movies" element={<Movies />} />
-      <Route path="/movies/:id" element={<MovieDetails />} />
+      <Route path="/movies/:id" element={<MoviesDetails />} />
     </Routes>
   </Router>
 );

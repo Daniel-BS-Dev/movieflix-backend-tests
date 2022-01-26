@@ -4,6 +4,7 @@
   color: #bcbcbc;
   padding: 0px 10px;
   background: #000;
+  border-radius: 5px;
 
 }
 
@@ -93,9 +94,12 @@
   }
 
   .info-text-authorization{
-    display:block;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-right:40px;
     flex:1;
+
   }
 
 

@@ -1,14 +1,22 @@
-.container-movie-details h3,
-.container-movie-details .content-navbar h1,
-.container-movie-details .container-navbar .container-nav .container-ul li,
-.container-movie-details
+.container-movies-details {
+  width: 100%;
+  min-height: calc(100vh - 20px);
+  padding: 10px;
+  border-radius: 4px;
+  background: #000;
+}
+
+.container-movies-details h3,
+.container-movies-details .content-navbar h1,
+.container-movies-details .container-navbar .container-nav .container-ul li,
+.container-movies-details
   .container-navbar
   .container-nav
   .container-ul
   li
   .form-filter-movie
   button,
-.container-movie-details
+.container-movies-details
   .container-navbar
   .container-nav
   .container-ul
@@ -16,4 +24,86 @@
   .form-filter-movie
   input::placeholder {
   color: #bcbcbc;
+}
+
+.container-review {
+  margin-top: 20px;
+  padding: 20px 10px;
+  border-radius: 5px;
+  background-color: #1c1c1c;
+}
+
+.review input {
+  height: 50px;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.review button {
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  
+}
+
+.container-show-review{
+  margin: 25px 0px;
+  padding: 20px 10px;
+  border-radius: 5px;
+  background: #1c1c1c;
+}
+
+@media screen and (min-width:768px){
+  .container-movies-details .padding-movie {
+    padding: 10px 100px;
+
+  }
+
+  .container-review {
+    text-align: center;
+  }
+  
+
+  .review button {
+    width: 50%;
+   
+    
+  }
+}
+
+@media screen and (min-width:992px){
+  .container-movies-details .padding-movie {
+    padding: 10px 150px;
+
+  }
+
+}
+
+@media screen and (min-width:1111px){
+  .container-movies-details .padding-movie {
+    padding: 10px;
+
+  }
+
+  .container-review {
+    margin: 40px 0px;
+   
+  }
+
+}
+
+@media screen and (min-width:1200px){
+  .container-movies-details .padding-movie {
+    padding: 10px 50px 10px 50px;
+
+  }
+
+  .container-review {
+    padding: 20px 50px;
+    
+  }
+
 }

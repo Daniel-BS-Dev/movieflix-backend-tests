@@ -1,6 +1,7 @@
 .movie-container {
   min-height: calc(100vh - 20px);
   background: black;
+  padding-top: 10px;
   border-radius: 10px;
 }
 
