@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.movieflix.dto.RoleDTO;
+import com.devsuperior.movieflix.services.RoleService;
 
 @RestController
 @RequestMapping(value ="/roles")
@@ -23,8 +24,4 @@ public class RoleResource {
 		   return ResponseEntity.ok().body(list);
 		 
 	}
-	
-	
-	
-	
 }
