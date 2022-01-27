@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.devsuperior.movieflix.services.exception.EntityNotFoundException;
+import com.devsuperior.movieflix.services.exception.ResourceNotFoundException;
 import com.devsuperior.movieflix.services.exception.UnauthorizedException;
 
 @ControllerAdvice
@@ -28,7 +29,18 @@ public class ResourceExceptionHandler {
 		
 	}
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public ResponseEntity<StandardError> entityNotFound(MethodArgumentNotValidException e, HttpServletRequest request){
+	public ResponseEntity<StandardError> entityNotFoun(MethodArgumentNotValidException e, HttpServletRequest request){
+		StandardError err = new StandardError();
+		err.setTimestamp(Instant.now());
+		err.setStatus(HttpStatus.UNPROCESSABLE_ENTITY.value());
+		err.setError("Empty Field");
+		err.setMessage(e.getMessage());
+		err.setPath(request.getRequestURI());
+		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);
+	}
+	
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<StandardError> passwordInvalid(ResourceNotFoundException e, HttpServletRequest request){
 		StandardError err = new StandardError();
 		err.setTimestamp(Instant.now());
 		err.setStatus(HttpStatus.UNPROCESSABLE_ENTITY.value());

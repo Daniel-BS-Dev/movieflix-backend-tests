@@ -41,9 +41,9 @@ public class UserResource {
 		return ResponseEntity.created(uri).body(dto);
 	}
 	
-	@PutMapping
-	public ResponseEntity<UserDTO> insert(String email, String newPassword, @RequestBody UserDTOUpdate dto){
-	  UserDTO password = service.update(email, dto, newPassword);
-	 return ResponseEntity.ok().body(password);
+	@PutMapping("/{email}")
+	public ResponseEntity<UserDTOUpdate> insert(@PathVariable String email, @RequestBody UserDTOUpdate dto){
+	 service.update(email, dto);
+	 return ResponseEntity.ok().body(dto);
 	}
 }

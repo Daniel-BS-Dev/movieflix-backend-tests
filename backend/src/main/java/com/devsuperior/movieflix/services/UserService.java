@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.RoleDTO;
-import com.devsuperior.movieflix.dto.UserDTO;
 import com.devsuperior.movieflix.dto.UserDTOReviews;
 import com.devsuperior.movieflix.dto.UserDTOUpdate;
 import com.devsuperior.movieflix.dto.UserInsertDTO;
@@ -23,6 +22,7 @@ import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.RoleRepository;
 import com.devsuperior.movieflix.repositories.UserRepository;
 import com.devsuperior.movieflix.services.exception.EntityNotFoundException;
+import com.devsuperior.movieflix.services.exception.ResourceNotFoundException;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -80,14 +80,17 @@ public class UserService implements UserDetailsService {
 
 	
 	@Transactional
-	public UserDTO update(String email, UserDTOUpdate dto, String newPassword) {
+	public UserDTOUpdate update(String email, UserDTOUpdate dto) {
 		try {
 		   User user = repository.findByEmail(email);
-		   if(dto.getPassword() == newPassword) {
+		   if(!dto.getNewPassword().equals(dto.getPassword())){
+				throw new ResourceNotFoundException("Senha são diferentes");
+		   
+		   }
 		   user.setPassword(dto.getPassword());
 		   user = repository.save(user);
-		   return  new UserDTO(user);
-		  }
+		   return new UserDTOUpdate(user.getPassword(), dto.getPassword()); 
+	
 		}
 		catch(NullPointerException e) {
 			throw new EntityNotFoundException("Email não Existe");
