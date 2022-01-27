@@ -1,4 +1,4 @@
-}.container-register{
+.container-register{
     width:100%;
     padding:40px 10px;
     border-radius:4px;
@@ -27,6 +27,10 @@
 .button-register button{
     height:50px;
     width:85%;
+}
+
+.d-justify-start{
+    text-align: left;
 }
 
 @media screen and (min-width:360px){
@@ -84,7 +88,7 @@
 @media screen and (min-width: 992px){
     .container-register{
         width:480px;
-        padding:60px 20px;
+        padding:30px 20px;
       
     }
 
@@ -93,7 +97,7 @@
 @media screen and (min-width: 1200px){
     .container-register{
         width:520px;
-        padding:60px 20px;
+        padding:30px 20px;
       
     }
 

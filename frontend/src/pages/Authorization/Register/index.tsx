@@ -27,14 +27,10 @@ const Register = () => {
           placeholder="Nome"
           className={`form-control ${errors.name ? "is-invalid" : ""}`}
           {...register("name", {
-            required: "Campo obrigatório",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Email inválido",
-            },
+            required: "Campo obrigatório"
           })}
         />
-        <div className="invalid-feedback d-block login-error d-justify-start">
+        <div className="invalid-feedback d-block  d-justify-start">
           {errors.name?.message}
         </div>
         <input
@@ -49,7 +45,7 @@ const Register = () => {
             },
           })}
         />
-        <div className="invalid-feedback d-block login-error d-justify-start">
+        <div className="invalid-feedback d-block  d-justify-start">
           {errors.email?.message}
         </div>
         <input
