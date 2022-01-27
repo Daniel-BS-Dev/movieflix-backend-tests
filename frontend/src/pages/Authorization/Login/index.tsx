@@ -1,8 +1,10 @@
+import { requestBackendLogin, saveAuthData } from "../../../utils/request";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import "./styles.css";
-import { requestBackendLogin, saveAuthData } from "../../../utils/request";
+
 
 type Credencials = {
   username: string;
@@ -20,8 +22,11 @@ const Login = () => {
 
   const onSubmit = (formData: Credencials) => {
     requestBackendLogin(formData)
-      .then((response) => {
-        console.log("success")
+    .then((response) => {
+      saveAuthData(response.data); 
+      setHasError(false);
+      navigate('/home');
+      toast.success('LOGIN EFETUADO COM SUCESSO')
       })
       .catch((error) => {
         setHasError(true);
@@ -72,9 +77,9 @@ const Login = () => {
         <div className="button-login">
           <button className="btn btn-success">FAZER LOGIN</button>
           <p>
-            Não tenho
+            Não tenho cadastro?
             <span>
-              <Link to="/register"> CADASTRO</Link>
+              <Link to="/register"> CADASTRAR</Link>
             </span>
           </p>
         </div>
