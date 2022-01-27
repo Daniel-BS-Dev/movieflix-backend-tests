@@ -33,6 +33,36 @@
     text-align: left;
 }
 
+.select-register__value-container {
+  height: 100%;
+  text-align: left;
+  line-height: 50px;
+}
+
+.select-register__control {
+    margin-top: 30px;
+    border-radius: 5px !important;
+    height: 50px !important;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    color: #212529 !important;
+    padding-right: 10px !important;
+   
+  }
+  
+  .select-register__placeholder {
+    height: 100%;
+    color: #212529 !important;
+    padding-left: 4px;
+    opacity: 0.7;
+  }
+
+  
+  
+  .select-register__indicator-separator {
+    display: none;
+}
+
 @media screen and (min-width:360px){
     .container-register{
        padding:50px 10px;

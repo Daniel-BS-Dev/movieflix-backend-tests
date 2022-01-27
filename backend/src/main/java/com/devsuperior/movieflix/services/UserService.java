@@ -80,12 +80,14 @@ public class UserService implements UserDetailsService {
 
 	
 	@Transactional
-	public UserDTO update(String email, UserDTOUpdate dto) {
+	public UserDTO update(String email, UserDTOUpdate dto, String newPassword) {
 		try {
 		   User user = repository.findByEmail(email);
-		   user.setPassword(passwordEncoder.encode(dto.getPassword()));
+		   if(dto.getPassword() == newPassword) {
+		   user.setPassword(dto.getPassword());
 		   user = repository.save(user);
 		   return  new UserDTO(user);
+		  }
 		}
 		catch(NullPointerException e) {
 			throw new EntityNotFoundException("Email não Existe");

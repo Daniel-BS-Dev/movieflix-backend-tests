@@ -41,9 +41,9 @@ public class UserResource {
 		return ResponseEntity.created(uri).body(dto);
 	}
 	
-	@PutMapping("/{email}")// caminho que vai na uri
-	public ResponseEntity<UserDTO> insert(@PathVariable String email, @RequestBody UserDTOUpdate dto){
-	  UserDTO newPassword = service.update(email, dto);
-	 return ResponseEntity.ok().body(newPassword);
+	@PutMapping
+	public ResponseEntity<UserDTO> insert(String email, String newPassword, @RequestBody UserDTOUpdate dto){
+	  UserDTO password = service.update(email, dto, newPassword);
+	 return ResponseEntity.ok().body(password);
 	}
 }
