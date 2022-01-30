@@ -83,11 +83,11 @@ public class UserService implements UserDetailsService {
 	public UserDTOUpdate update(String email, UserDTOUpdate dto) {
 		try {
 		   User user = repository.findByEmail(email);
-		   if(!dto.getNewPassword().equals(passwordEncoder.encode(dto.getPassword()))){
+		   if(!dto.getNewPassword().equals(dto.getPassword())){
 				throw new ResourceNotFoundException("Senha são diferentes");
 		   
 		   }
-		   user.setPassword(dto.getPassword());
+		   user.setPassword(passwordEncoder.encode(dto.getPassword()));
 		   user = repository.save(user);
 		   return new UserDTOUpdate(user.getPassword(), dto.getPassword()); 
 	
