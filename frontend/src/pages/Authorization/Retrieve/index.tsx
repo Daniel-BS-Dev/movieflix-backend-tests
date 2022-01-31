@@ -8,17 +8,13 @@ import { requestBackend } from '../../../utils/request';
 import './styles.css';
 
 
-type ProductUrl = {
-  email: string;
-};
-
 const Retrieve = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<User>();
-  const { email } = useParams<ProductUrl>();
+  
 
   const navigate = useNavigate();
 
