@@ -80,9 +80,9 @@ public class UserService implements UserDetailsService {
 
 	
 	@Transactional
-	public UserDTOUpdate update(String email, UserDTOUpdate dto) {
+	public UserDTOUpdate update(UserDTOUpdate dto) {
 		try {
-		   User user = repository.findByEmail(email);
+		   User user = repository.findByEmail(dto.getEmail());
 		   if(!dto.getNewPassword().equals(dto.getPassword())){
 				throw new ResourceNotFoundException("Senha são diferentes");
 		   

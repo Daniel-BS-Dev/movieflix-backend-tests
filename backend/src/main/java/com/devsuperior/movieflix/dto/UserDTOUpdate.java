@@ -7,6 +7,7 @@ import org.apache.catalina.User;
 public class UserDTOUpdate  implements Serializable{
 	private static final long serialVersionUID = 1L; 
 	
+	private String email;
 	private String newPassword;
 	private String password;
 	
@@ -24,6 +25,15 @@ public class UserDTOUpdate  implements Serializable{
 		password = entity.getPassword();
 	}
 	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getPassword() {
 		return password;
 	}
