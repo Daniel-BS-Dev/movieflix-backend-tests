@@ -179,6 +179,7 @@ const Home = () => {
               ))}
           </div>
         </div>
+        
         <div className="catalog-movie-home">
           <h2>Comedia</h2>
         </div>
