@@ -1,25 +1,27 @@
 import { AxiosRequestConfig } from 'axios';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { User } from "../../../Types/type";
 import { requestBackend } from '../../../utils/request';
 import './styles.css';
 
+type Credencials = {
+  email: string,
+  newPassword: string,
+  password: string
+}
 
 const Retrieve = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<User>();
+  } = useForm<Credencials>();
   
-
   const navigate = useNavigate();
 
-    const onSubmit = (formData: User) => {
-      console.log(formData);
+  const onSubmit = (formData: Credencials) => {
+
     const config: AxiosRequestConfig = {
       method: "PUT",
       url: '/users',
@@ -32,11 +34,6 @@ const Retrieve = () => {
         navigate("/login");
         toast.success("Cadastro realizado com sucesso");
       })
-      .catch(() => {
-        toast.error(
-          "Email já existe. Verifique o email digitado e tente novamente"
-        );
-      });
   };
 
     return (
@@ -63,9 +60,9 @@ const Retrieve = () => {
           type="password"
           placeholder="Senha"
           className={`input-register form-control ${
-            errors.password ? "is-invalid" : ""
+            errors.newPassword ? "is-invalid" : ""
           }`}
-          {...register("password", {
+          {...register("newPassword", {
             required: "Campo obrigatório",
             pattern: {
               value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
@@ -76,7 +73,7 @@ const Retrieve = () => {
         />
 
         <div className="invalid-feedback d-block d-justify-start">
-          {errors.password?.message}
+          {errors.newPassword?.message}
         </div>
 
          <input

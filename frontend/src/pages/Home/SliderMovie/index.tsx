@@ -1,40 +1,33 @@
-import Carousel from "react-elastic-carousel";
 import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
-import Item from "../../../utils/Item";
+import { Movie } from "../../../Types/type";
 import "./styles.css";
 
-const SliderMovie = () => {
-  const product = {
-    id: 11,
-    title: "Amor e Monstros",
-    subTitle: "An apocalyptic love story.",
-    year: 2020,
-    imgUri:
-      "https://www.themoviedb.org/t/p/original/sLSYI1B9IWo7MO8Q60v9JlOXyXn.jpg",
-  };
+type Props = {
+  movies: Movie[];
 
-  const handleLeft = () => {
-     console.log('clicou')
-  }
+};
 
-  const handleRight = () => {
-    console.log('clicou')
- }
+const SliderMovie = ({ movies }: Props) => {
 
   return (
-    <Carousel isRTL enableAutoPlay autoPlaySpeed={5000} className="carousel">
-      <Item>
-        <div className="div-image">
-        <div> <Arrow  onClick={handleLeft} className="arrow" /> <Arrow  onClick={handleRight} className="arrow-lef arrow"/></div>
-          <img className="image" src={product.imgUri} />
-        </div>
-        <div className="slider-info">
-          <h1>{product.title}</h1>
-          <p>{product.subTitle}</p>
-        </div>
-      </Item>
+    <section className="container-slider">
+        <div className="content-slider">
+        {movies?.map((r) => (
+          <img src={r.imgUri} key={r.id} />
+        ))}
+
+        {movies?.map((r) => (
+          <div className="slider-info" key={r.id}>
+            <h5>{r.title}</h5>
+            <p>{r.subTitle}</p>
+          </div>
+        ))}
+
+        <div className="div-button">
      
-    </Carousel>
+        </div>
+      </div>
+    </section>
   );
 };
 

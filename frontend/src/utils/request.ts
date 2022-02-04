@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+import { toast } from 'react-toastify';
 import qs from "qs";
 
 export const BASE_URL =
@@ -62,3 +63,21 @@ export const saveAuthData = (obj: LoginResponse) => {
 export const removeToken = () => {
   return localStorage.removeItem("authData");
 };
+
+
+axios.interceptors.response.use(
+  function (response) {
+    return response;
+  },
+  function (error) {
+    if (error.response.status === 404) {
+     toast.error('Email Não existe. Verifique os dados e tente novamente')
+    }
+
+    if (error.response.status === 422) {
+      toast.error('Senha são diferentes')
+    }
+
+    return Promise.reject(error);
+  }
+);
