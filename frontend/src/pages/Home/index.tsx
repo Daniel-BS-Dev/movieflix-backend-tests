@@ -105,6 +105,31 @@ const Home = () => {
         {movie && <SliderMovie movies={movie.content} />}
       </div>
       <div className="list-image-home">
+      <div className="catalog-movie-home">
+          <h2>Aventura</h2>
+          <div className="home-container-button">
+            <button
+              className="button-left"
+              onClick={() => onChange(movieActive - 1)}
+              disabled={adventureMovie?.first}
+            >
+              <Arrow />
+            </button>
+            <button
+              onClick={() => onChange(movieActive + 1)}
+              disabled={adventureMovie?.last}
+            >
+              <Arrow />
+            </button>
+          </div>
+          <div className="movies-home">
+            {adventureMovie &&
+              adventureMovie.content.map((movie) => (
+                <Movies movie={movie} key={movie.id} />
+              ))}
+          </div>
+        </div>
+
         <div className="catalog-movie-home">
           <h2>Acão</h2>
           <div className="home-container-button">
@@ -129,30 +154,7 @@ const Home = () => {
               ))}
           </div>
         </div>
-        <div className="catalog-movie-home">
-          <h2>Aventura</h2>
-          <div className="home-container-button">
-            <button
-              className="button-left"
-              onClick={() => onChange(movieActive - 1)}
-              disabled={adventureMovie?.first}
-            >
-              <Arrow />
-            </button>
-            <button
-              onClick={() => onChange(movieActive + 1)}
-              disabled={adventureMovie?.last}
-            >
-              <Arrow />
-            </button>
-          </div>
-          <div className="movies-home">
-            {adventureMovie &&
-              adventureMovie.content.map((movie) => (
-                <Movies movie={movie} key={movie.id} />
-              ))}
-          </div>
-        </div>
+       
         <div className="catalog-movie-home">
           <h2>Terror</h2>
           <div className="home-container-button">
