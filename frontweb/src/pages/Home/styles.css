@@ -75,7 +75,7 @@
 }
 
 .catalog-movie-home h2 {
-  font-size: 25px;
+  font-size: 30px;
   margin-bottom: -2px;
   color: #bcbcbc;
 }
@@ -87,4 +87,18 @@
 
 .isLoader {
   height: 200px;
+}
+
+@media screen and (min-width:586px) {
+  .slider-home {
+    top: 20px;
+   
+  }
+}
+
+@media screen and (min-width:768px) {
+  .catalog-movie-home h2 {
+    font-size: 35px;
+   
+  }
 }

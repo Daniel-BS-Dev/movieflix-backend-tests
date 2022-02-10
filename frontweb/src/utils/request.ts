@@ -1,6 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { toast } from 'react-toastify';
+import jwtDecode from 'jwt-decode';
+import history from './history';
 import qs from "qs";
+import { Role } from "../Types/type";
 
 export const BASE_URL =
   process.env.REACT_APP_BACKEND_URL ?? "https://db-movieflix.herokuapp.com";
@@ -31,10 +34,6 @@ export const requestBackend = (config: AxiosRequestConfig) => {
   return axios({ ...config, baseURL: BASE_URL, headers });
 };
 
-export const getAuthData = () => {
-  const str = localStorage.getItem("authData") ?? "{}";
-  return JSON.parse(str) as LoginResponse;
-};
 
 export const requestBackendLogin = (loginData: LoginData) => {
   const headers = {
@@ -56,9 +55,35 @@ export const requestBackendLogin = (loginData: LoginData) => {
   });
 };
 
+export const getAuthData = () => {
+  const str = localStorage.getItem("authData") ?? "{}";
+  return JSON.parse(str) as LoginResponse;
+};
+
 export const saveAuthData = (obj: LoginResponse) => {
   localStorage.setItem("authData", JSON.stringify(obj));
 };
+
+export type TokenData = {
+  exp: number;
+  user_name: string;
+  authorities: Role[];
+};
+
+export const getTokenData = (): TokenData | undefined => {
+  try {
+    return jwtDecode(getAuthData().access_token);
+  } catch (error) {
+    return undefined;
+  }
+};
+
+export const isAuthenticated = (): boolean => {
+  const tokenData = getTokenData();
+
+  return tokenData && tokenData.exp * 1000 > Date.now() ? true : false;
+};
+
 
 export const removeToken = () => {
   return localStorage.removeItem("authData");
@@ -76,6 +101,11 @@ axios.interceptors.response.use(
 
     if (error.response.status === 422) {
       toast.error('Senha são diferentes')
+    }
+
+    if (error.response.status === 401) {
+      history.push('/login');
+      document.location.reload();
     }
 
     return Promise.reject(error);

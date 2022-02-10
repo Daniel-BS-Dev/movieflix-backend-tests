@@ -1,7 +1,7 @@
 .container-movie-home{
     width: 50%;
-    height: auto;
-    margin-right: 10px;
+    height: 150px;
+    margin-right: 4px;
     margin-bottom: 40px;
    
 }
@@ -31,27 +31,39 @@
   text-transform: uppercase;
 }
 
+@media screen and (min-width:500px){
+    .container-movie-home{
+        margin-right: 7px;
 
-@media screen and (min-width:992px){
-    .container-name-movie h3{
-        font-size: 15px;
        
-      }
-
-      .container-movie-home{
-        width: 220px;
-
     }
 }
 
-@media screen and (min-width:1200px){
+@media screen and (min-width:768px){
+    .container-movie-home{
+        margin-right: 10px;
+       
+    }   
+
     .container-name-movie h3{
         font-size: 16px;
-       
-      }
-
-      .container-movie-home{
-        width: 270px;
-
     }
+
+}
+
+
+@media screen and (min-width:992px){
+    .container-movie-home{
+        margin-right: 15px;
+        height: 200px;
+       
+    }    
+}
+
+@media screen and (min-width:1200px){
+    .container-movie-home{
+        margin-right: 20px;
+       
+    }
+    
 }

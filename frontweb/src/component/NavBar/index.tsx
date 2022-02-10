@@ -1,10 +1,41 @@
-import { NavLink } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ReactComponent as Home } from "../../assets/home.svg";
 import { ReactComponent as Movie } from "../../assets/movie.svg";
+import { AuthContext } from "../../ContextAuth";
+import { getTokenData, isAuthenticated, removeToken } from "../../utils/request";
 import FilterMovie from "../FilterMovie";
 import "./styles.css";
 
+
 const NavBar = () => {
+  const {setAuthContextData } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated()) {
+      setAuthContextData({
+        isAuthenticated: true,
+        token: getTokenData(),
+      });
+    } else {
+      setAuthContextData({
+        isAuthenticated: false,
+      });
+    }
+  }, [setAuthContextData]);
+
+  function handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+    removeToken();
+    setAuthContextData({
+      isAuthenticated: false,
+    });
+
+    navigate('/');
+
+  }
+
   return (
     <header className="container-navbar">
       <div className="content-navbar">
@@ -30,7 +61,11 @@ const NavBar = () => {
               </NavLink>
             </li>
           </ul>
-          <h3>sair</h3>
+          <h3>
+            <Link to="#logout" className="nav-logout" onClick={handleClick}>
+              sair
+            </Link>
+          </h3>
         </nav>
       </div>
     </header>
