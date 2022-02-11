@@ -4,11 +4,17 @@ import { ReactComponent as Home } from "../../assets/home.svg";
 import { ReactComponent as Movie } from "../../assets/movie.svg";
 import { AuthContext } from "../../ContextAuth";
 import { getTokenData, isAuthenticated, removeToken } from "../../utils/request";
-import FilterMovie from "../FilterMovie";
+import FilterMovie, { ProductFilterData } from "../FilterMovie";
 import "./styles.css";
 
 
-const NavBar = () => {
+type Props = {
+  numberPage? : (item: number) => void,
+  filterData? : (data : ProductFilterData) => void;
+}
+
+const NavBar = ({filterData, numberPage} : Props) => {
+
   const {setAuthContextData } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -43,7 +49,7 @@ const NavBar = () => {
         <nav className="container-nav">
           <ul className="container-ul">
             <li className="li-search">
-              <FilterMovie />
+             {filterData && numberPage && <FilterMovie filterData={filterData} numberPage={numberPage}/>}
             </li>
             <li className="svg-home">
               <NavLink

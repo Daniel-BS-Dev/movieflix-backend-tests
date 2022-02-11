@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Movie } from "../../../Types/type";
 import "./styles.css";
 
@@ -8,13 +9,15 @@ type Props = {
 const Movies = ({ movie }: Props) => {
   return (
     <section className="container-movie-home">
-      <div className="content-movie-home">
-        <img src={movie.imgUri} />
-      </div>
+         <Link to={`/movies/${movie.id}`}>
+        <div className="content-movie-home">
+          <img src={movie.imgUri} />
+        </div>
 
-      <div className="container-name-movie">
-        <h3>{movie.title}</h3>
-      </div>
+        <div className="container-name-movie">
+          <h3>{movie.title}</h3>
+        </div>
+        </Link>
     </section>
   );
 };

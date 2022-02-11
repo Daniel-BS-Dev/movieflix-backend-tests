@@ -4,6 +4,8 @@
   align-items: center;
   background: #1c1c1c;
   border-radius: 4px;
+  min-height: 370px;
+  border: 2px solid;
 }
 
 .container-card-movie img,
@@ -15,7 +17,7 @@
 }
 
 .container-card-movie img {
-  height: auto;
+  height: 200px;
   border-radius: 4px 4px 0px 0px;
 }
 
@@ -26,6 +28,7 @@
 .container-card-movie-info h2 {
   font-size: 20px;
   line-height: 27px;
+  text-transform: uppercase;
   color: #bcbcbc;
 }
 
@@ -40,3 +43,4 @@
   line-height: 19px;
   color: #bcbcbc;
 }
+

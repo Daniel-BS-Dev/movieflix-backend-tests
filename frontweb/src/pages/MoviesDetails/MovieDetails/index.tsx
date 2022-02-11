@@ -1,19 +1,40 @@
+import axios, { AxiosRequestConfig } from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Movie } from "../../../Types/type";
+import { BASE_URL, requestBackend } from "../../../utils/request";
 import "./styles.css";
 
+type UrlParams = {
+  id: string;
+};
+
 const MovieDetails = () => {
-  const movie = {
-    title: "Invocação do Mal 3: A Ordem do Demônio",
-    subTitle: "O caso demoníaco que chocou a América",
-    year: 2013,
-    imgUri:
-      "https://www.themoviedb.org/t/p/original/nUMtHNnM4EWQ3Md4NfjJQBCvHos.jpg",
-    synopsis:
-      "Revela uma história arrepiante de terror, assassinato e um mal desconhecido que chocou até os investigadores paranormais da vida real, Ed e Lorraine Warren. Um dos casos mais intrigantes de seus arquivos, começa com uma luta pela alma de um garoto, depois os leva além de tudo o que já haviam visto antes, para marcar a primeira vez na história dos EUA um suspeito de assassinato alega possessão demoníaca como defesa.",
-  };
-  
+
+  const { id } = useParams<UrlParams>();
+  const [movie, setMovie] = useState<Movie>();
+  const[isLoader, setIsLoader] = useState(false);
+
+  useEffect(() => {
+    const params: AxiosRequestConfig = {
+      method: "GET",
+      url: `/movies/${id}`,
+      withCredentials: true,
+    };
+
+    setIsLoader(true);
+    requestBackend(params)
+      .then((response) => {
+        setMovie(response.data);
+      })
+      .finally(() => {
+        setIsLoader(false);
+      });
+  }, [id]);
+
   return (
     <section className="container-movie-details">
-      <div className="content-movie-details">
+      { isLoader ? <h1 className="ready">Carregando...</h1> : <div className="content-movie-details">
         <img src={movie?.imgUri} />
         <div className="container-movie-details-info">
           <h2>{movie?.title}</h2>
@@ -23,7 +44,7 @@ const MovieDetails = () => {
             <p>{movie?.synopsis}</p>
           </div>
         </div>
-      </div>
+      </div>}
     </section>
   );
 };

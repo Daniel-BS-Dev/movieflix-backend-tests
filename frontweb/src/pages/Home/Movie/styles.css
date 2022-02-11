@@ -1,5 +1,5 @@
 .container-movie-home{
-    width: 50%;
+    width: 35%;
     height: 150px;
     margin-right: 4px;
     margin-bottom: 40px;
@@ -63,6 +63,7 @@
 @media screen and (min-width:1200px){
     .container-movie-home{
         margin-right: 20px;
+        height: 250px;
        
     }
     

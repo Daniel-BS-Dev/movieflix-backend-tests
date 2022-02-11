@@ -17,9 +17,6 @@ const MoviesDetails = () => {
      </section>
      <section className="container-show-review">
       <Review />
-      <Review />
-      <Review />
-      <Review />
      </section>
      </div>
     </section>

@@ -2,21 +2,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .pagination-arrow-right{
     transform: rotate(180deg);
-    margin-right: -10px;
+    margin-right: -5px;
 }
 
 .container-button{
-    margin: 0px 15px;
+    margin: 0px 10px;
 }
 
 .container-button button{
-   width: 30px;
+   font-weight: 900;
+   width: 25px;
    height: 30px;
-   margin-left: 10px;
+   margin-left: 5px;
    border-radius: 50%;
    text-align: center;
    background: #bcbcbc;
@@ -25,13 +27,35 @@
 }
 
 .container-button .active-button{
-    background: rgba(44, 203, 105, 0.95);
+   background: rgba(44, 203, 105, 0.95);
+   color: #fff;
 }
 
 .active-arrow{
     color: rgba(44, 203, 105, 0.95);
+    cursor: pointer;
 }
 
-.pagination-arrow-right, .pagination-arrow-left{
+.inactive-arrow{
     color: #bcbcbc;
+    cursor: none;
+    pointer-events: none;
+}
+
+@media screen and (min-width:350px){
+    .pagination-arrow-right{
+        margin-right: -10px;
+    }
+
+    .container-button{
+        margin: 0px 15px;
+    }
+
+    .container-button button{
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+     
+     }
+     
 }

@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -54,7 +56,7 @@ public class UserService implements UserDetailsService {
 	
 	@Transactional(readOnly = true)
 	public List<UserDTOReviews> findAll(){
-	List<User> list = repository.findAll();
+	List<User> list = repository.findAll(Sort.by(Direction.DESC));
 	return list.stream().map(x -> new UserDTOReviews(x, x.getReviews())).collect(Collectors.toList());
 	
    }
