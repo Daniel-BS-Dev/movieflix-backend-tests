@@ -31,7 +31,7 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
 ## detalhes do Filme
 ![details](https://user-images.githubusercontent.com/81425846/153729787-b071f4cf-7657-4182-bd31-2e86115d2879.png)
 
-#Layout Mobile
+# Layout Mobile
 ## login
 ![login mobile](https://user-images.githubusercontent.com/81425846/153729815-4ece7c2a-1940-465a-8480-ceee62b3be45.png)
 ## filmes
@@ -40,14 +40,32 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
 ![details mobile](https://user-images.githubusercontent.com/81425846/153729825-e647a724-4233-4eb7-87ee-564b14fb5da2.png)
 
 # Tecnologias Utilizadas
+## Back end
    - Java
    - Spring Boot
    - JPA / Hibernate
    - Maven
+
+## Front end
+   - VsCode
+   - TypeScript
+   - Reactjs
+   - yarn
+   - nodejs
+   - HTML
+   - CSS
+   - Bootstrap
+   - React Hook Form
+   
+## Implementação na Nuvem
+   - Heroku
+   - Postgres
+   - Netlify
+  
    
 # Como executar o projeto
 
-Pré-requisitos : Java 8
+Pré-requisitos : Java 11
 
 * Importação do projeto
 
