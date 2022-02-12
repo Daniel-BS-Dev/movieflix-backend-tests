@@ -21,6 +21,13 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
 # Modelo Conceitual
 ![movieflix (2)](https://user-images.githubusercontent.com/81425846/125809059-eb316f49-ddcd-4f27-ab52-ac7337db8b4d.png)
 
+# Layout Front Web
+![login](https://user-images.githubusercontent.com/81425846/153729778-26d6185f-ee6c-4770-bf2a-8543be5039c0.png)
+![home movie](https://user-images.githubusercontent.com/81425846/153729782-4f1e92ec-3766-4e4f-aa47-1a34a9c7fedb.png)
+![movie](https://user-images.githubusercontent.com/81425846/153729785-99028bda-b42c-4a74-b5dc-287b67eacf75.png)
+![details](https://user-images.githubusercontent.com/81425846/153729787-b071f4cf-7657-4182-bd31-2e86115d2879.png)
+
+
 # Tecnologias Utilizadas
    - Java
    - Spring Boot
