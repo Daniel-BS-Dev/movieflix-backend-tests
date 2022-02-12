@@ -71,7 +71,7 @@ const MoviesDetails = () => {
             <ReviewPost review={(text) => handleOnClick(text)} />
           </section>
         )}
-        {hasAnyRoles(["ROLE_MEMBER"]) && (isLoader ? (
+        {isLoader ? (
           <h1 className="ready">Carregando...</h1>
         ) : movie && movie.reviews.length === 0 ? (
           ""
@@ -82,7 +82,7 @@ const MoviesDetails = () => {
                 <Review reviews={reviews} key={reviews.id} />
               ))}
           </section>
-        ))}
+        )}
       </div>
     </section>
   );
