@@ -43,6 +43,7 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
 ## Back end
    - Java
    - Spring Boot
+   - Postman
    - JPA / Hibernate
    - Maven
 
