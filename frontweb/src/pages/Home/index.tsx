@@ -122,7 +122,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setActionMovie(response.data);
-        console.log(actionMovie);
       })
       .finally(() => {
         setIsLoader(false);
