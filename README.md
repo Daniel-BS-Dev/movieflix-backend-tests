@@ -27,6 +27,10 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
 ![movie](https://user-images.githubusercontent.com/81425846/153729785-99028bda-b42c-4a74-b5dc-287b67eacf75.png)
 ![details](https://user-images.githubusercontent.com/81425846/153729787-b071f4cf-7657-4182-bd31-2e86115d2879.png)
 
+Layout Mobile
+![login mobile](https://user-images.githubusercontent.com/81425846/153729815-4ece7c2a-1940-465a-8480-ceee62b3be45.png)
+![movie mobile](https://user-images.githubusercontent.com/81425846/153729823-a2896065-c2d4-4ff2-a2cc-78d9e7389178.png)
+![details mobile](https://user-images.githubusercontent.com/81425846/153729825-e647a724-4233-4eb7-87ee-564b14fb5da2.png)
 
 # Tecnologias Utilizadas
    - Java
