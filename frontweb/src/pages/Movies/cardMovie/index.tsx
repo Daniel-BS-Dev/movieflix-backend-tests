@@ -1,4 +1,3 @@
-import { type } from "os";
 import { Movie } from "../../../Types/type";
 import "./styles.css";
 

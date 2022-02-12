@@ -20,7 +20,7 @@ export type User = {
   name: string;
   password: string;
   roles: Role;
-  reviews: Reviews[];
+  
 };
 
 export type Movie = {
@@ -30,6 +30,7 @@ export type Movie = {
   year: number;
   imgUri: string;
   synopsis: string;
+  reviews: Reviews[];
 };
 
 export type Reviews = {

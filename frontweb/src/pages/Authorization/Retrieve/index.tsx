@@ -32,7 +32,7 @@ const Retrieve = () => {
     requestBackend(config)
       .then(() => {
         navigate("/login");
-        toast.success("Cadastro realizado com sucesso");
+        toast.success("Nova senha salva com sucesso");
       })
   };
 

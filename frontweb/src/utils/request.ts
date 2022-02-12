@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import jwtDecode from 'jwt-decode';
 import history from './history';
 import qs from "qs";
-import { Role } from "../Types/type";
+
 
 export const BASE_URL =
   process.env.REACT_APP_BACKEND_URL ?? "https://db-movieflix.herokuapp.com";
@@ -111,3 +111,19 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+type Role = 'ROLE_VISITOR' | 'ROLE_MEMBER';
+
+export const hasAnyRoles = (role: Role[]): boolean => {
+  if (role.length === 0) {
+    return true;
+  }
+
+  const tokenData = getTokenData();
+
+  if (tokenData !== undefined) {
+    return role.some((roles) => tokenData.authorities.includes(roles));
+  }
+
+  return false;
+};

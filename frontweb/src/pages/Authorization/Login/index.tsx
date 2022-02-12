@@ -44,7 +44,7 @@ const Login = () => {
       )}
 
       <form className="form-login" onSubmit={handleSubmit(onSubmit)}>
-        <input
+      <input
           type="email"
           placeholder="Email"
           className={`form-control ${errors.username ? "is-invalid" : ""}`}

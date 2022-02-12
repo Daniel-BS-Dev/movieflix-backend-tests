@@ -9,11 +9,9 @@ import { AxiosRequestConfig } from "axios";
 import { requestBackend } from "../../utils/request";
 import { ProductFilterData } from "../../component/FilterMovie";
 
-
 type ControlComponentsData = {
   activePage: number;
   filterData: ProductFilterData;
-
 };
 
 const Movies = () => {
@@ -22,12 +20,12 @@ const Movies = () => {
   const [isActive, setIsActive] = useState(0);
 
   const [controlComponentsData, setControlComponentsData] =
-  useState<ControlComponentsData>({
-    activePage: 0,
-    filterData: {
-      name: "",
-    },
-  });
+    useState<ControlComponentsData>({
+      activePage: 0,
+      filterData: {
+        name: "",
+      },
+    });
 
   useEffect(() => {
     const params: AxiosRequestConfig = {
@@ -35,11 +33,10 @@ const Movies = () => {
       url: `/movies`,
       withCredentials: true,
       params: {
-          page: isActive || controlComponentsData.activePage,
-          linesPerPage: 8,
-          title: controlComponentsData.filterData.name,
-          
-        },
+        page: isActive || controlComponentsData.activePage,
+        linesPerPage: 8,
+        title: controlComponentsData.filterData.name,
+      },
     };
 
     setIsLoader(true);
@@ -52,20 +49,23 @@ const Movies = () => {
       });
   }, [isActive, controlComponentsData]);
 
- function change (item: number){}
+  function change(item: number) {}
 
   return (
     <section className="movie-container" id="beginning">
-      <NavBar 
-         numberPage={(item: number) => change(item)}
-         filterData={(data: ProductFilterData) => {
-           setControlComponentsData({ activePage: 0, filterData: data });
-         }}
-
+      <NavBar
+        numberPage={(item: number) => change(item)}
+        filterData={(data: ProductFilterData) => {
+          setControlComponentsData({ activePage: 0, filterData: data });
+        }}
       />
       <div className="container-list-card-movie">
         {isLoader ? (
           <h1 className="ready">Carregando...</h1>
+        ) : page?.content.length === 0 ? (
+          <div className="not-found">
+            <p>Filme não foi encontrado!</p>
+          </div>
         ) : (
           page?.content.map((movies) => (
             <Link to={`/movies/${movies.id}`} key={movies.id}>

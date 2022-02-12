@@ -9,7 +9,6 @@ type Props = {
   
 }
 
-
 const Pagination = ({ totalPages, pageIsActive, onChange } : Props) => {
   const items = generatedList(totalPages);
   const previousArrow = totalPages > 0 && pageIsActive > 0 ? 'active-arrow' : 'inactive-arrow';

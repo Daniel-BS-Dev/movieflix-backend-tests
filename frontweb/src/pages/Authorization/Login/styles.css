@@ -22,9 +22,10 @@
 
 .form-login input{
     height:50px;
+
 }
 
-.form-login input:nth-child(2){
+.form-login input:nth-child(3){
     margin-top:20px;
 }
 

@@ -10,11 +10,9 @@ import "./styles.css";
 import MovieSkeleton from "../../component/MyLoader/MovieSkeleton";
 import { ProductFilterData } from "../../component/FilterMovie";
 
-
 type ControlComponentsData = {
   activePage: number;
   filterData: ProductFilterData;
-
 };
 
 const Home = () => {
@@ -55,7 +53,7 @@ const Home = () => {
   const [movieDrama, setMovieDrama] = useState(0);
 
   useEffect(() => {
-   const params: AxiosRequestConfig = {
+    const params: AxiosRequestConfig = {
       method: "GET",
       url: "/movies",
       withCredentials: true,
@@ -68,7 +66,7 @@ const Home = () => {
     requestBackend(params).then((response) => {
       setMovie(response.data);
     });
-  },[isActive]);
+  }, [isActive]);
 
   function changeImage() {
     (movie && movie.totalElements - 1) !== isActive
@@ -96,7 +94,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setFamilyMovie(response.data);
-    
       })
       .finally(() => {
         setIsLoader(false);
@@ -125,7 +122,7 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setActionMovie(response.data);
-        console.log(actionMovie)
+        console.log(actionMovie);
       })
       .finally(() => {
         setIsLoader(false);
@@ -135,7 +132,6 @@ const Home = () => {
   function onChangeAction(item: number) {
     setMovieAction(item);
   }
-
 
   //horror
   useEffect(() => {
@@ -155,7 +151,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setHorrorMovie(response.data);
-      
       })
       .finally(() => {
         setIsLoader(false);
@@ -184,7 +179,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setComedyMovie(response.data);
-      
       })
       .finally(() => {
         setIsLoader(false);
@@ -213,7 +207,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setRomanceMovie(response.data);
-      
       })
       .finally(() => {
         setIsLoader(false);
@@ -242,7 +235,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setFantasyMovie(response.data);
-      
       })
       .finally(() => {
         setIsLoader(false);
@@ -253,8 +245,8 @@ const Home = () => {
     setMovieFantasy(item);
   }
 
-   //adventure
-   useEffect(() => {
+  //adventure
+  useEffect(() => {
     const params: AxiosRequestConfig = {
       method: "GET",
       url: "/movies",
@@ -271,7 +263,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setAdventureMovie(response.data);
-      
       })
       .finally(() => {
         setIsLoader(false);
@@ -300,7 +291,6 @@ const Home = () => {
     requestBackend(params)
       .then((response) => {
         setDramaMovie(response.data);
-      
       })
       .finally(() => {
         setIsLoader(false);
@@ -310,7 +300,6 @@ const Home = () => {
   function onChangeDrama(item: number) {
     setMovieDrama(item);
   }
-
 
   function change(item: number) {
     setMovieFamily(item);
@@ -331,7 +320,6 @@ const Home = () => {
           filterData={(data: ProductFilterData) => {
             setControlComponentsData({ activePage: 0, filterData: data });
           }}
-  
         />
       </div>
       <div className="slider-home">
@@ -358,14 +346,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : familyMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              familyMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (familyMovie && 
+              familyMovie &&
               familyMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
 
@@ -389,14 +379,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : actionMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              actionMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (actionMovie && 
+              actionMovie &&
               actionMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
 
@@ -420,14 +412,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : horrorMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              horrorMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (horrorMovie && 
+              horrorMovie &&
               horrorMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
 
@@ -451,14 +445,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : comedyMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              comedyMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (comedyMovie && 
+              comedyMovie &&
               comedyMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
 
@@ -482,14 +478,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : romanceMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              romanceMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (romanceMovie && 
+              romanceMovie &&
               romanceMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
 
@@ -513,14 +511,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : fantasyMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              fantasyMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (fantasyMovie && 
+              fantasyMovie &&
               fantasyMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
 
@@ -544,14 +544,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : adventureMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              adventureMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (adventureMovie && 
+              adventureMovie &&
               adventureMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
 
@@ -575,14 +577,16 @@ const Home = () => {
           <div className="movies-home">
             {isLoader ? (
               <MovieSkeleton />
+            ) : dramaMovie?.content.length === 0 ? (
+              <div className="not-found">
+                <p>Filme não foi encontrado! Veja nos proximos generos</p>
+              </div>
             ) : (
-              dramaMovie?.content.length === 0 ? (<div className="not-found"><p>Filme não foi encontrado! Veja nos proximos generos</p></div>) :
-              (dramaMovie && 
+              dramaMovie &&
               dramaMovie.content.map((movie) => (
                 <Movies movie={movie} key={movie.id} />
               ))
-            
-              ))}
+            )}
           </div>
         </div>
       </div>

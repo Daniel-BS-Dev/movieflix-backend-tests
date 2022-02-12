@@ -1,4 +1,3 @@
-import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
 import { Movie } from "../../../Types/type";
 import "./styles.css";
 

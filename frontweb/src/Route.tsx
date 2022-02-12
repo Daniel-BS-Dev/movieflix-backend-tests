@@ -3,7 +3,6 @@ import Authorization from './pages/Authorization';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import MoviesDetails from './pages/MoviesDetails';
-import MovieDetails from './pages/MoviesDetails/MovieDetails';
 
 
 const DRoutes = () => (

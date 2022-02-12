@@ -1,20 +1,23 @@
-import {ReactComponent as Star} from '../../../assets/star.svg';
-import './styles.css'
+import { ReactComponent as Star } from "../../../assets/star.svg";
+import { Reviews } from "../../../Types/type";
+import "./styles.css";
 
-const Review = () => {
-    return(
-      <section className='container-review'>
-        <div className='review-name'>
-          <Star />
-          <h5>Maria Silva</h5>
-        </div>
-        <div className='review-comment'>
-          <p>
-            gostei muito do filme foi muito bom mesmo pena que durou pouco
-          </p>
-        </div>
-      </section>
-    );
-}
+type Props = {
+  reviews: Reviews;
+};
+
+const Review = ({ reviews }: Props) => {
+  return (
+    <section className="container-review">
+      <div className="review-name">
+        <Star />
+        <h5>{reviews.user.name}</h5>
+      </div>
+      <div className="review-comment">
+        <p> {reviews.text} </p>
+      </div>
+    </section>
+  );
+};
 
 export default Review;
