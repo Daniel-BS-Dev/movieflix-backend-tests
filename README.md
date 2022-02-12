@@ -62,6 +62,7 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
    - Postgres
    - Netlify
   
+## Link do projeto: https://db-movieflix.netlify.app
    
 # Como executar o projeto
 
