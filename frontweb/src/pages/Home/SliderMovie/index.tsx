@@ -12,7 +12,7 @@ const SliderMovie = ({ movies }: Props) => {
     <section className="container-slider">
         <div className="content-slider">
         {movies?.map((r) => (
-          <img src={r.imgUri} key={r.id} />
+          <img src={r.imgUri} alt={r.title} key={r.id} />
         ))}
 
         {movies?.map((r) => (

@@ -11,7 +11,7 @@ const MovieDetails = ({movie} : Props) => {
   return (
     <section className="container-movie-details">
       {<div className="content-movie-details">
-        <img src={movie?.imgUri} />
+        <img src={movie?.imgUri} alt={movie.title}/>
         <div className="container-movie-details-info">
           <h2>{movie?.title}</h2>
           <h6>{movie?.year}</h6>

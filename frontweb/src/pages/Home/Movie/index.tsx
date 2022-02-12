@@ -11,7 +11,7 @@ const Movies = ({ movie }: Props) => {
     <section className="container-movie-home">
          <Link to={`/movies/${movie.id}`}>
         <div className="content-movie-home">
-          <img src={movie.imgUri} />
+          <img src={movie.imgUri} alt={movie.title}/>
         </div>
 
         <div className="container-name-movie">
